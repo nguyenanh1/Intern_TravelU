@@ -40,7 +40,7 @@ var styles = {
     textinput:{
         borderBottomColor: '#000000',
         borderBottomWidth: 1,
-        fontSize:14
+        fontSize:16
     },
     edt:{
         marginBottom: 20,

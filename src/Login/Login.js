@@ -19,7 +19,7 @@ export default class Login extends Component{
                     <Image source={logo}></Image>
                 </ImageBackground>
                 <View style={styles.white}></View>
-                <View style={styles.form}>
+                <View style={styles.form} elevation={5}>
                     <View style={styles.edt}>
                         <Text style={styles.title}>Username</Text>
                         <TextInput style={styles.textinput} placeholder="example@email.com"></TextInput>

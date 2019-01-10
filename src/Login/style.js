@@ -26,7 +26,7 @@ var styles = {
         backgroundColor:"white",
         borderRadius: 20,
         borderColor: "#707070",
-        borderWidth:1,
+        
         padding: 25,
         shadowColor: '#000',
         shadowOffset: { width: 5, height: 5 },

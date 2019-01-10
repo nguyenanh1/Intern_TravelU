@@ -21,54 +21,31 @@ export default class Regsiter extends Component {
 
         <View style={styles.body}>
           <View style={styles.form}>
-
-            <View style={{margin: '10%'}}>
+            <View style={{ margin: '10%' }}>
               <Text>Username</Text>
               <TextInput
-                style={{
-                  height: 40,
-                  width: '80%',
-                  borderColor: 'gray',
-                  borderBottomWidth: 0.5,
-                  fontSize: 20,
-                }}
+                style={{ height: 40, width: '80%', borderColor: 'gray', borderBottomWidth: 0.5, fontSize: 20 }}
                 placeholder="example@gmail.com"
-              />
-            </View>
+              /></View>
 
-            <View style={{margin: '10%'}}>
+            <View style={{ margin: '10%' }}>
               <Text>Password</Text>
               <TextInput
-                style={{
-                  height: 40,
-                  width: '80%',
-                  borderColor: 'gray',
-                  borderBottomWidth: 0.5,
-                  fontSize: 20,
-                }}
+                style={{ height: 40, width: '80%', borderColor: 'gray', borderBottomWidth: 0.5, fontSize: 20 }}
                 placeholder="**********"
-              />
-            </View>
+              /></View>
 
-            <View style={{margin: '10%'}}>
+            <View style={{ margin: '10%' }}>
               <Text>Repassword</Text>
               <TextInput
-                style={{
-                  height: 40,
-                  width: '80%',
-                  borderColor: 'gray',
-                  borderBottomWidth: 0.5,
-                  fontSize: 20,
-                }}
+                style={{ height: 40, width: '80%', borderColor: 'gray', borderBottomWidth: 0.5, fontSize: 20 }}
                 placeholder="**********"
-              />
-            </View>
+              /></View>
           </View>
           <View style={styles.bot}>
-            <Image
-              source={require ('../../resource/image/button.png')}
-              style={styles.anh}
-            />
+
+            <Image source={require('../../resource/image/button.png')} style={styles.anh}>
+            </Image>
           </View>
         </View>
       </View>

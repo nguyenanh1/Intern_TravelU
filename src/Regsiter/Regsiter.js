@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import { Text, View, ImageBackground, Image, TextInput } from 'react-native';
+import React, {Component} from 'react';
+import {Text, View, ImageBackground, Image, TextInput,TouchableOpacity} from 'react-native';
 import styles from './Style';
 
 export default class Regsiter extends Component {
-  render() {
+  render () {
     return (
       <View style={styles.khung}>
         <View style={styles.top}>
-          <ImageBackground source={require('../../resource/image/backgrountoplogin.png')} style={{ width: '100%', height: '100%', }}>
-            <Image source={require('../../resource/image/ic_back.png')} ></Image>
-            <Image source={require('../../resource/image/logo.png')} style={{ marginLeft: '25%' }}></Image>
+          <ImageBackground
+            source={require ('../../resource/image/backgrountoplogin.png')}
+            style={{width: '100%', height: '100%'}}
+          >
+            <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}><Image source={require ('../../resource/image/ic_back.png')} /></TouchableOpacity>
+            <Image
+              source={require ('../../resource/image/logo.png')}
+              style={{marginLeft: '25%'}}
+            />
           </ImageBackground>
         </View>
 
         <View style={styles.body}>
           <View style={styles.form}>
-
             <View style={{ margin: '10%' }}>
               <Text>Username</Text>
               <TextInput
@@ -43,8 +48,7 @@ export default class Regsiter extends Component {
             </Image>
           </View>
         </View>
-      </View >
-
+      </View>
     );
   }
 }

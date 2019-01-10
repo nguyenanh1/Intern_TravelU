@@ -12,6 +12,9 @@ import bgtop from '../../resource/image/backgrountoplogin.png'
 import logo from '../../resource/image/logo.png'
 import { bold } from 'ansi-colors';
 export default class Login extends Component{
+    signUp(){
+        this.props.navigation.navigate('Register');
+    }
     render(){
         return(
             <View style={styles.container}>
@@ -41,7 +44,7 @@ export default class Login extends Component{
                     <View style={[styles.edt,{alignItems:"center",justifyContent: "center",margin: 20, flexDirection:"row"}]}>
                         <Text style={{color:"#9596AD"}}>Don't have an account?
                         </Text>
-                        <TouchableOpacity style={{}}>
+                        <TouchableOpacity onPress={()=>{this.signUp()}}>
                             <Text style={[{color:"#2088FF",fontWeight: "200",marginLeft:10}]}>Sign up</Text>
                         </TouchableOpacity>
                     </View>

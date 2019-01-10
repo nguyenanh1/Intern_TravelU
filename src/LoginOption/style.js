@@ -1,4 +1,5 @@
-var styles = {
+import {StyleSheet} from 'react-native'
+var styles = StyleSheet.create({
     container:{
         flex: 1,
         width:null,
@@ -13,6 +14,12 @@ var styles = {
     button:{
         flex: 1,
         justifyContent: 'center',
+    },
+    login:{
+        color:"white",
+        fontFamily: 'GothamBook Regular',
+        fontSize: 15,
+        margin: 10,
     }
-}
+});
 module.exports = styles;

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, ImageBackground, Image, TextInput} from 'react-native';
+import {Text, View, ImageBackground, Image, TextInput,TouchableOpacity} from 'react-native';
 import styles from './Style';
 
 export default class Regsiter extends Component {
@@ -11,7 +11,7 @@ export default class Regsiter extends Component {
             source={require ('../../resource/image/backgrountoplogin.png')}
             style={{width: '100%', height: '100%'}}
           >
-            <Image source={require ('../../resource/image/ic_back.png')} />
+            <TouchableOpacity onPress={()=>{this.props.navigation.goBack()}}><Image source={require ('../../resource/image/ic_back.png')} /></TouchableOpacity>
             <Image
               source={require ('../../resource/image/logo.png')}
               style={{marginLeft: '25%'}}

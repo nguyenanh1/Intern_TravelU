@@ -38,7 +38,7 @@ export default class Hobbis extends Component {
                         <View>
                             <TouchableOpacity style={{ marginTop: '5%' }} onPress={() => { this.props.navigation.navigate("LoginOption") }}>
                                 <Text style={[{ color: "white", fontSize: 15, fontWeight: "bold", textAlign: 'right' }]}>Skip</Text>
-                            </TouchableOpacity >
+                            </TouchableOpacity>
                         </View>
                         <View style={{ alignItems: 'center' }}>
                             <Image source={require('../../resource/image/logo.png')}></Image>

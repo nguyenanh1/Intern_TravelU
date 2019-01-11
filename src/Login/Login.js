@@ -44,7 +44,7 @@ export default class Login extends Component{
                             <Text style={styles.textforget}>Forget your password</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={[styles.edt,{alignItems:"center",justifyContent: "center",margin: 20}]}>
+                    <View style={[styles.edt,styles.viewLogin]}>
                         <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
                             <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} style={{borderRadius:30,paddingTop: 15,paddingBottom: 15, paddingLeft:70, paddingRight:70}} colors={["#F117BE","#8D0CBA"]}>
                                 <Text style={[{color:"white",fontSize: 14, fontWeight:"bold"}]}>LOGIN</Text>

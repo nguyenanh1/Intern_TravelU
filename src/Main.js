@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator , createBottomTabNavigator } from 'react-navigation';
 import LoginOption from './LoginOption/LoginOption'
 import Login from './Login/Login'
 import Register from './Regsiter/Regsiter'
 import Hobbis from './hobbis/Hobbis';
 import Home from './home/Home';
-
+import Search from './Search/Search'
 const RootStack = createStackNavigator(
     {
       LoginOption: {
@@ -22,11 +22,14 @@ const RootStack = createStackNavigator(
       },
       HobbisScreen:{
           screen: Hobbis
+      },
+      Search:{
+          screen:Search
       }
     },
     {
        headerMode: 'none',
-       initialRouteName: 'LoginOption',
+       initialRouteName: 'Home',
     }
   );
   

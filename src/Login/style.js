@@ -53,6 +53,18 @@ var styles = {
         color:'#2B2D5C',
         fontSize:14,
         opacity:0.5
+    },
+    signUp:{
+        alignItems:"center",
+        justifyContent: "center",
+        margin: 20, 
+        flexDirection:"row"
+    },
+    viewLogin: {
+        alignItems:"center",
+        justifyContent: "center",
+        margin: 20
     }
+
 }
 module.exports = styles;

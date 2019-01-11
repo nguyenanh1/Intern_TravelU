@@ -45,13 +45,13 @@ export default class Login extends Component{
                         </TouchableOpacity>
                     </View>
                     <View style={[styles.edt,{alignItems:"center",justifyContent: "center",margin: 20}]}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this.props.navigation.navigate("Home")}}>
                             <LinearGradient start={{x: 0, y: 0}} end={{x: 1, y: 0}} style={{borderRadius:30,paddingTop: 15,paddingBottom: 15, paddingLeft:70, paddingRight:70}} colors={["#F117BE","#8D0CBA"]}>
                                 <Text style={[{color:"white",fontSize: 14, fontWeight:"bold"}]}>LOGIN</Text>
                             </LinearGradient>
                         </TouchableOpacity>
                     </View>
-                    <View style={[styles.edt,{alignItems:"center",justifyContent: "center",margin: 20, flexDirection:"row"}]}>
+                    <View style={[styles.edt,styles.signUp]}>
                         <Text style={{color:"#9596AD"}}>Don't have an account?
                         </Text>
                         <TouchableOpacity onPress={()=>{this.signUp()}}>

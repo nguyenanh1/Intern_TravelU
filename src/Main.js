@@ -4,6 +4,7 @@ import LoginOption from './LoginOption/LoginOption'
 import Login from './Login/Login'
 import Register from './Regsiter/Regsiter'
 import Hobbis from './hobbis/Hobbis';
+import Home from './home/Home';
 
 const RootStack = createStackNavigator(
     {
@@ -15,6 +16,9 @@ const RootStack = createStackNavigator(
       },
       Register: {
           screen: Register
+      },
+      Home:{
+        screen: Home
       },
       HobbisScreen:{
           screen: Hobbis

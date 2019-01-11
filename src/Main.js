@@ -3,6 +3,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import LoginOption from './LoginOption/LoginOption'
 import Login from './Login/Login'
 import Register from './Regsiter/Regsiter'
+import Hobbis from './hobbis/Hobbis';
 
 const RootStack = createStackNavigator(
     {
@@ -14,6 +15,9 @@ const RootStack = createStackNavigator(
       },
       Register: {
           screen: Register
+      },
+      HobbisScreen:{
+          screen: Hobbis
       }
     },
     {

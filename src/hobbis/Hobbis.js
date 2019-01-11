@@ -1,45 +1,33 @@
 import React, { Component } from 'react';
-import { Text, View, ImageBackground, Image, TextInput, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
+import { Text, View, ImageBackground, Image, TextInput, TouchableHighlight, TouchableOpacity } from 'react-native';
 import styles from './style';
+import LinearGradient from 'react-native-linear-gradient'
 
 export default class Hobbis extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            stastus: false
+            stastus: false,
+            id: ''
         };
     }
-
-    anvaoanh() {
+    anvaoanh = (d) => {
         this.setState({
-            status: !this.state.status
+            status: !this.state.status,
+            id: d
         });
     }
-    update() {
-        this.shouldComponentUpdate(Image = (this.state.stastus));
-    }
-    signUp() {
-        this.props.navigation.navigate('hobbis');
-    }
-
-    onProcessChecked = (testID) => {
+    onProcessChecked = (id) => {
         if (this.state.status) {
             return (
                 <Image
-                    testID='phuot'
-                    source={require('../../resource/image/ic_check.png')}
-                    style={{ position: 'absolute', right: 0 }}>
-                </Image> ,
-                <Image
-                    testID='dulich'
+                    testID='{this.state.id}'
                     source={require('../../resource/image/ic_check.png')}
                     style={{ position: 'absolute', right: 0 }}>
                 </Image>
             );
-
         }
     }
-
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -60,88 +48,98 @@ export default class Hobbis extends Component {
                     <View style={styles.list}>
                         <View style={styles.cot}>
                             <View style={styles.dong}>
-                                <TouchableOpacity
-                                    onPress={() => { this.anvaoanh(phuot) }}>
-                                    <Image source={require('../../resource/image/ic_phuotthu.png')} ></Image>
-                                    {this.onProcessChecked()}
-
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Phượt thủ</Text>
-                                </TouchableOpacity>
+                                <TouchableHighlight onPress={() => { this.anvaoanh() }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_phuotthu.png')} ></Image>
+                                        {this.onProcessChecked()}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Phượt thủ</Text>
+                                    </View>
+                                </TouchableHighlight>
                             </View>
                             <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { this.anvaoanh(dulich) }}>
-                                    <Image source={require('../../resource/image/ic_dulich.png')} ></Image>
-                                    {this.onProcessChecked()}
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Du lịch</Text>
-                                </TouchableOpacity>
+                                <TouchableHighlight onPress={() => { this.anvaoanh() }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_dulich.png')} ></Image>
+                                        {this.onProcessChecked()}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Du lịch</Text>
+                                    </View>
+                                </TouchableHighlight>
                             </View>
                             <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { }}>
-                                    <Image source={require('../../resource/image/ic_chupanh.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}></Image>
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Chụp ảnh</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                        <View style={styles.cot}>
-                            <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { }}>
-                                    <Image source={require('../../resource/image/ic_hoainiem.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}></Image>
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Hoài niệm</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { }}>
-                                    <Image source={require('../../resource/image/ic_doinui.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}></Image>
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Đồi núi</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { }}>
-                                    <Image source={require('../../resource/image/ic_songnuoc.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}></Image>
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Sông nước</Text>
-                                </TouchableOpacity>
+                                <TouchableHighlight onPress={() => { this.anvaoanh() }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_chupanh.png')} ></Image>
+                                        {this.onProcessChecked()}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Chụp ảnh</Text>
+                                    </View>
+                                </TouchableHighlight>
                             </View>
                         </View>
                         <View style={styles.cot}>
                             <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { }}>
-                                    <Image source={require('../../resource/image/ic_cokinh.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}></Image>
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Cổ kính</Text>
-                                </TouchableOpacity>
+                                <TouchableHighlight onPress={() => { this.anvaoanh() }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_hoainiem.png')} ></Image>
+                                        {this.onProcessChecked()}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Hoài niệm</Text>
+                                    </View>
+                                </TouchableHighlight>
                             </View>
                             <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { }}>
-                                    <Image source={require('../../resource/image/ic_mongmo.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}>
-                                    </Image>
-
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Mộng mơ</Text>
-                                </TouchableOpacity>
+                                <TouchableHighlight onPress={() => { this.anvaoanh(2) }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_doinui.png')} ></Image>
+                                        {this.onProcessChecked(2)}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Đồi núi</Text>
+                                    </View>
+                                </TouchableHighlight>
                             </View>
                             <View style={styles.dong}>
-                                <TouchableOpacity onPress={() => { this.anvaoanh() }}>
-                                    <Image source={require('../../resource/image/ic_hiendai.png')} ></Image>
-                                    <Image source={require('../../resource/image/ic_check.png')}
-                                        style={{ position: 'absolute', right: 0 }}></Image>
-                                    <Text style={{ color: 'white', textAlign: 'center' }}>Hiện đại</Text>
-                                </TouchableOpacity>
+                                <TouchableHighlight onPress={() => { this.anvaoanh(1) }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_songnuoc.png')} ></Image>
+                                        {this.onProcessChecked(1)}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Sông nước</Text>
+                                    </View>
+                                </TouchableHighlight>
+                            </View>
+                        </View>
+                        <View style={styles.cot}>
+                            <View style={styles.dong}>
+                                <TouchableHighlight onPress={() => { this.anvaoanh() }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_cokinh.png')} ></Image>
+                                        {this.onProcessChecked()}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Cổ kính</Text>
+                                    </View>
+                                </TouchableHighlight>
+                            </View>
+                            <View style={styles.dong}>
+                                <TouchableHighlight onPress={() => { this.anvaoanh('2') }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_mongmo.png')} ></Image>
+                                        {this.onProcessChecked('2')}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Mộng mơ</Text>
+                                    </View>
+                                </TouchableHighlight>
+                            </View>
+                            <View style={styles.dong}>
+                                <TouchableHighlight onPress={() => { this.anvaoanh('1') }} underlayColor="transparent">
+                                    <View>
+                                        <Image source={require('../../resource/image/ic_hiendai.png')} ></Image>
+                                        {this.onProcessChecked('1')}
+                                        <Text style={{ color: 'white', textAlign: 'center' }}>Hiện đại</Text>
+                                    </View>
+                                </TouchableHighlight>
                             </View>
                         </View>
                     </View>
-                    <TouchableOpacity onPress={() => { }} style={{ flex: 1, backgroundColor: 'pink', alignItems: 'center', justifyContent: 'center' }}>
-                        <Text style={{ color: 'white', textAlign: 'center', fontSize: 20, }}>Đồng ý</Text>
-                    </TouchableOpacity>
+                    <TouchableHighlight onPress={() => { }} underlayColor="transparent"
+                        style={{ flex: 1 }}>
+                        <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center' }} colors={["#F117BE", "#8D0CBA"]}>
+                            <Text style={{ color: 'white', textAlign: 'center', fontSize: 20, }}>Đồng ý</Text>
+                        </LinearGradient>
+                    </TouchableHighlight>
                 </ImageBackground>
             </View >
         );

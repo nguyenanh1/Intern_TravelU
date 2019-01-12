@@ -129,6 +129,7 @@ export default class Search extends Component {
                     />
                   );
                 }}
+                showsHorizontalScrollIndicator={false}
                 horizontal={true}
                 style={{
                   flexDirection: 'row',

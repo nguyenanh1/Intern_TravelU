@@ -22,7 +22,7 @@ export default class Login extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <StatusBar hidden/>
+                <StatusBar backgroundColor="transparent" translucent={true} />
                 <ImageBackground source={bgtop} style={styles.backgroundTop}>
                     <Image source={logo}></Image>
                     <TouchableOpacity onPress={()=>this.props.navigation.goBack()} style={{position: 'absolute',top: 38, left:5}}><Image source={back}></Image></TouchableOpacity>

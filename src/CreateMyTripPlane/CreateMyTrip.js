@@ -7,7 +7,7 @@ import {
   TouchableHighlight,
   TextInput,
   Switch,
-  DatePickerAndroid
+  DatePickerAndroid,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './style';
@@ -39,44 +39,42 @@ export default class CreateMyTripPlane extends Component {
       name: () => {
         let from = this.state.from;
         let to = this.state.to;
-        if(from == "" || to ==""){
+        if (from == '' || to == '') {
           return '';
-        }else{
+        } else {
           return '3 days to ' + to + ' from ' + from;
         }
-        
       },
-      privateValue: false
+      privateValue: false,
     };
   }
-  changeTo(text){
-    this.setState({
-      to: text
-    })
+  changeTo (text) {
+    this.setState ({
+      to: text,
+    });
   }
-  changeFrom(text){
-    this.setState({
-      from: text
-    })
+  changeFrom (text) {
+    this.setState ({
+      from: text,
+    });
   }
-  pickFrom(){
+  pickFrom () {
     try {
-      const {action, year, month, day} =  DatePickerAndroid.open({
+      const {action, year, month, day} = DatePickerAndroid.open ({
         // Use `new Date()` for current date.
         // May 25 2020. Month 0 is January.
-        date: new Date(2020, 4, 25)
+        date: new Date (2020, 4, 25),
       });
-      if (action === DatePickerAndroid.dismissedAction) {
-        // Selected year, month (0-11), day
+      if (action === DatePickerAndroid.dateSetAction) {
       }
     } catch ({code, message}) {
-      console.warn('Cannot open date picker', message);
+      console.warn ('Cannot open date picker', message);
     }
   }
-  changeSwitch(){
+  changeSwitch () {
     getValuePrivate = this.state.privateValue;
-    this.setState({
-      privateValue: !getValuePrivate
+    this.setState ({
+      privateValue: !getValuePrivate,
     });
   }
   render () {
@@ -127,7 +125,9 @@ export default class CreateMyTripPlane extends Component {
                 <View style={{flex: 9}}>
                   <TextInput
                     style={{textAlign: 'right'}}
-                    onChangeText={(text)=>{this.changeFrom(text)}}
+                    onChangeText={text => {
+                      this.changeFrom (text);
+                    }}
                   />
                 </View>
 
@@ -139,13 +139,20 @@ export default class CreateMyTripPlane extends Component {
                 <View style={{flex: 9}}>
                   <TextInput
                     style={{textAlign: 'right'}}
-                    onChangeText={(text)=>{this.changeTo(text)}}
+                    onChangeText={text => {
+                      this.changeTo (text);
+                    }}
                   />
                 </View>
               </View>
             </View>
           </View>
-          <TouchableHighlight onPress={()=>{this.pickFrom()}} underlayColor="transparent">
+          <TouchableHighlight
+            onPress={() => {
+              this.pickFrom ();
+            }}
+            underlayColor="transparent"
+          >
             <View style={[styles.name, {marginTop: 5}]} elevation={5}>
               <View style={{marginLeft: 10, flex: 1}}>
                 <Image
@@ -187,7 +194,9 @@ export default class CreateMyTripPlane extends Component {
               >
                 Private?
               </Text>
-              <View style={{flex: 6, alignItems:"center",flexDirection:"row"}}>
+              <View
+                style={{flex: 6, alignItems: 'center', flexDirection: 'row'}}
+              >
                 <Text
                   style={{
                     fontFamily: 'Roboto regular',
@@ -199,10 +208,10 @@ export default class CreateMyTripPlane extends Component {
                   Mark a trip as private
                 </Text>
                 <View style={{flex: 1}}>
-                  <Switch 
+                  <Switch
                     value={this.state.privateValue}
-                    onValueChange={()=>{
-                      this.changeSwitch()
+                    onValueChange={() => {
+                      this.changeSwitch ();
                     }}
                   />
                 </View>
@@ -212,6 +221,9 @@ export default class CreateMyTripPlane extends Component {
           </View>
         </View>
         <TouchableHighlight
+          onPress={() => {
+            this.props.navigation.navigate ('AddPlace');
+          }}
           style={{
             position: 'absolute',
             bottom: 0,

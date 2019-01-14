@@ -7,7 +7,7 @@ export default class ViewItemSearch extends Component {
     render() {
         return (
 
-            <View style={{ marginTop: '10%' }}>
+            <View style={{ marginTop: '5%' }}>
                 <View style={{ flexDirection: 'row', flex: 1, marginLeft: '5%' }}>
                     <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'flex-start' }}>
                         <Image source={this.props.item.avatar}
@@ -18,11 +18,14 @@ export default class ViewItemSearch extends Component {
                         <Text style={{ color: 'black', fontSize: 20, textAlign: 'left' }}>{this.props.item.key}</Text>
                     </View>
                     <View style={{ flex: 2, justifyContent: 'center', alignItems: 'flex-end' }}>
-                        <Text style={{ color: 'gray', fontSize: 14, marginRight: '15%' }}>{this.props.item.date}</Text>
+                        <Text style={{ color: 'gray', fontSize: 12, marginRight: '15%' }}>{this.props.item.date}</Text>
                     </View>
                 </View>
-                <View style={{ elevation: 1, height: 250, borderRadius: 5, margin: '5%' }}>
-                    <ImageBackground source={this.props.item.image} style={{ width: '105%', marginLeft: '-5%', height: 180, }}>
+                <View style={{ elevation: 1, height: 250, borderRadius: 10, margin: '5%' }}>
+                    <ImageBackground
+                        source={this.props.item.image}
+                        style={{ width: '106%', marginLeft: '-6%', height: 180 }}
+                        imageStyle={{ borderRadius: 25 }}>
                         <View style={{ justifyContent: 'flex-end', flexDirection: 'row', marginTop: '-5%' }}>
                             <TouchableOpacity>
                                 <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold', marginRight: '2%', borderRadius: 10 }}>...</Text>
@@ -35,23 +38,22 @@ export default class ViewItemSearch extends Component {
                             </TouchableOpacity>
                         </View>
                         <View style={{ flex: 1 }}></View>
-                        <View style={{ backgroundColor: 'black', opacity: 0.7, marginLeft: '5%', justifyContent: 'flex-end' }}>
+                        <View style={{ backgroundColor: 'black', opacity: 0.6, marginLeft: '5%', justifyContent: 'flex-end' }}>
                             <View style={{ flexDirection: "row" }}>
                                 <View style={{ flex: 1, alignItems: 'center' }}>
                                     <Image source={this.props.item.ma}></Image>
                                 </View>
                                 <View style={{ flex: 10 }}>
-                                    <Text style={{ color: 'white', fontWeight: 'bold', }}>{this.props.item.name}</Text>
-                                    <Text style={{ color: 'white', }}>{this.props.item.diachi}</Text>
+                                    <Text style={{ color: 'white', fontWeight: 'bold', opacity: 2 }}>{this.props.item.name}</Text>
+                                    <Text style={{ color: 'white', opacity: 2 }}>{this.props.item.diachi}</Text>
                                 </View>
-                                <View style={{ flex: 3,justifyContent:'center' }}>
+                                <View style={{ flex: 3, justifyContent: 'center' }}>
                                     <Rating
                                         type="star"
                                         fractions={1}
                                         startingValue={this.props.item.rate}
                                         imageSize={15}
                                         readonly
-                                        ratingBackgroundColor='custom'
                                         ratingColor="#FF6600">
                                     </Rating>
                                 </View>

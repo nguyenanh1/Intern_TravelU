@@ -68,7 +68,7 @@ const TabNavigator = createBottomTabNavigator (
             : <Image
                 source={require ('../../resource/image/ic_file_disable.png')}
                 style={styles.tabIcon}
-              />,
+              />, 
       }),
     },
     CreateTrip: {
@@ -76,7 +76,6 @@ const TabNavigator = createBottomTabNavigator (
       navigationOptions: () => ({
         tabBarIcon: <ButtonTrip />
       }), 
-      tabBarVisible: false
     },
     Tab3: {
       screen: ScreenTab3,

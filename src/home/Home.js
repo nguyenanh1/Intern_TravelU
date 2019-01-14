@@ -9,6 +9,7 @@ import ScreenHome from './screen/ScreenHome/ScreenHome';
 import ScreenTab2 from './screen/ScreenTab2/ScreenTab2';
 import ScreenTab3 from './screen/ScreenTab3/ScreenTab3';
 import ScreenProfile from './screen/ScreenProfile/ScreenProfile';
+import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
 
 const HomeStack = createStackNavigator (
@@ -20,13 +21,21 @@ const HomeStack = createStackNavigator (
     headerMode: 'none',
   }
 );
+const Profile = createStackNavigator (
+  {
+    Profile: ScreenProfile,
+    Profiledetail: Profiledetail,
+  },
+  {
+    headerMode: 'none',
+  }
+);
 
 const TabNavigator = createBottomTabNavigator (
   {
     Home: {
       screen: HomeStack,
-      navigationsOptions: () => ({
-        tabBarLabel: 'Trang chủ',
+      navigationOptions: () => ({
         tabBarIcon: ({focused}) =>
           focused
             ? <Image
@@ -38,24 +47,11 @@ const TabNavigator = createBottomTabNavigator (
                 style={styles.tabIcon}
               />,
       }),
-
-      //   navigationsOptions: () => ({
-      //     tabBarLabel: 'Trang chủ',
-      //     tabBarIcon: ({focused}) =>
-      //       focused
-      //         ? <Image
-      //             source={require ('../../resource/image/ic_home.png')}
-      //             style={styles.tabIcon}
-      //           />
-      //         : <Image
-      //             source={require ('../../resource/image/ic_home_disabled.png')}
-      //             style={styles.tabIcon}
-      //           />,
-      //   }),
     },
     Tab2: {
       screen: ScreenTab2,
-      navigationsOptions: () => ({
+      navigationOptions: () => ({
+        tabBarLabel: 'Trang chủ',
         tabBarIcon: ({focused}) =>
           focused
             ? <Image
@@ -70,7 +66,7 @@ const TabNavigator = createBottomTabNavigator (
     },
     Tab3: {
       screen: ScreenTab3,
-      navigationsOptions: () => ({
+      navigationOptions: () => ({
         tabBarIcon: ({focused}) =>
           focused
             ? <Image
@@ -84,8 +80,8 @@ const TabNavigator = createBottomTabNavigator (
       }),
     },
     Profile: {
-      screen: ScreenProfile,
-      navigationsOptions: () => ({
+      screen: Profile,
+      navigationOptions: () => ({
         tabBarIcon: ({focused}) =>
           focused
             ? <Image

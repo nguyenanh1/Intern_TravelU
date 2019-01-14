@@ -5,7 +5,8 @@ import Login from './Login/Login'
 import Register from './Regsiter/Regsiter'
 import Hobbis from './hobbis/Hobbis';
 import Home from './home/Home';
-import Search from './Search/Search'
+import Search from './Search/Search';
+import Profile from './home/screen/ScreenProfile/ScreenProfile'
 const RootStack = createStackNavigator(
     {
       LoginOption: {
@@ -22,6 +23,9 @@ const RootStack = createStackNavigator(
       },
       HobbisScreen:{
           screen: Hobbis
+      },
+      Profile:{
+            screen:Profile
       },
       Search:{
           screen:Search

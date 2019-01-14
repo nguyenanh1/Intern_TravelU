@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import {
-    View, Text, ScrollView, ImageBackground, Image
-} from 'react-native'
-import { Button } from 'react-native-elements';
+    View, Text, ScrollView, ImageBackground, Image, FlatList, TouchableOpacity
+} from 'react-native';
+import data from './datatrip';
+import Viewtrip from './viewtrip';
+
 export default class Profiledetail extends Component {
+    static navigationOptions = {
+        tabBarVisible: false
+    };
     render() {
         return (
             <View>
@@ -13,13 +18,17 @@ export default class Profiledetail extends Component {
                             style={{ width: '100%', height: 160 }}>
                             <View style={{ marginTop: 20, flexDirection: 'row' }}>
                                 <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'flex-start' }}>
-                                    <Image source={require('../../../../../resource/image/ic_back.png')} ></Image>
+                                    <TouchableOpacity onPress={()=>{this.props.navigation.navigate('Profiledetail')}}>
+                                        <Image source={require('../../../../../resource/image/ic_back.png')} ></Image>
+                                    </TouchableOpacity>
                                 </View>
                                 <View style={{ flex: 3, justifyContent: 'center', alignItems: 'flex-start' }}>
                                     <Text style={{ color: 'white', fontSize: 20, textAlign: 'left' }}>Tuyen 3d</Text>
                                 </View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
-                                    <Image source={require('../../../../../resource/image/ic_back.png')} ></Image>
+                                    <TouchableOpacity >
+                                        <Image source={require('../../../../../resource/image/ic_back.png')} ></Image>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
                         </ImageBackground>
@@ -59,36 +68,19 @@ export default class Profiledetail extends Component {
                                     <Text style={{ textAlign: 'center', fontSize: 14 }}>Point</Text>
                                 </View>
                             </View>
-                            <View>
-
-                            </View>
+                            <View></View>
                         </View>
                     </View>
-                    <View style={{  margin: '5%' }}>
-                        <View style={{flexDirection: 'row', flex: 1,}}>
-                            <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'flex-start' }}>
-                                <Image source={require('../../../../../resource/image/ic_phuotthu.png')}
-                                    style={{ width: 30, height: 30 }} >
-                                </Image>
-                            </View>
-                            <View style={{ flex: 3, justifyContent: 'center', alignItems: 'flex-start' }}>
-                                <Text style={{ color: 'black', fontSize: 20, textAlign: 'left' }}>Tuyen 3d</Text>
-                            </View>
-                            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
-                                <Text style={{ color: 'gray', fontSize: 14, }}>Appril 22th</Text>
-                            </View>
-                        </View>
-
-                        <View>
-                            <View style={{margin:'5%',flex:2}}>
-                                <ImageBackground source={require('../../../../../resource/image/hagiang.png')}
-                                style={{width:300,height:500}}>
-                                    <Button style={{backgroundColor:'white'}}><Text>Delete</Text></Button>
-                                </ImageBackground>
-                            </View>
-                        </View>
+                    <View style={{}}>
+                        <FlatList                         
+                            data={data}
+                            renderItem={({ item, index }) => {
+                                return (
+                                    <Viewtrip item={item} index={index} />
+                                );
+                            }}
+                        />
                     </View>
-
                 </ScrollView>
             </View>
         );

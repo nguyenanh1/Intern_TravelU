@@ -44,12 +44,23 @@ const Profile = createStackNavigator (
       screen: ScreenProfile,
     },Profiledetail:{
        screen: Profiledetail,
+    },Profile:{
+      screen:ScreenProfile
     }
   },
   {
     headerMode: 'none',
   }
 );
+Profile.navigationOptions=({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+      tabBarVisible = false;
+  }
+  return {
+      tabBarVisible,
+  };
+}
 class ButtonTrip extends Component{
   render(){
     return(

@@ -16,6 +16,9 @@ import datahot from './datahot';
 import ViewItemSearch from './ViewItemSearch';
 import ViewItemHot from './ViewItemHot';
 export default class Search extends Component {
+  static navigationOptions = {
+    tabBarVisible: false
+  };
   render () {
     return (
       <View style={styles.container}>

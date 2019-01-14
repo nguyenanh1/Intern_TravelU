@@ -28,6 +28,16 @@ const HomeStack = createStackNavigator (
   }
 );
 
+HomeStack.navigationOptions=({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+      tabBarVisible = false;
+  }
+  return {
+      tabBarVisible,
+  };
+}
+
 const Profile = createStackNavigator (
   {
     Home: {
@@ -35,7 +45,6 @@ const Profile = createStackNavigator (
     },Profiledetail:{
        screen: Profiledetail,
     }
-    
   },
   {
     headerMode: 'none',

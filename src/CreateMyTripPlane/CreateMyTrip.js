@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
-import {
-    View, 
-    Text,
-    StatusBar,
-    Image,
-    TouchableHighlight
-} from 'react-native';
+import {View, Text, StatusBar, Image, TouchableHighlight} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import styles from './style'
+import styles from './style';
 export default class CreateMyTripPlane extends Component {
+  static navigationOptions = {
+    tabBarVisible: false
+  };
   render () {
     return (
       <View style={styles.container}>
@@ -31,6 +28,9 @@ export default class CreateMyTripPlane extends Component {
             <Text style={[styles.title]}>Create trip plan</Text>
           </View>
         </LinearGradient>
+        <View>
+          <View />
+        </View>
       </View>
     );
   }

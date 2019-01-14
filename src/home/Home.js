@@ -11,6 +11,7 @@ import ScreenTab2 from './screen/ScreenTab2/ScreenTab2';
 import ScreenTab3 from './screen/ScreenTab3/ScreenTab3';
 import CreateMyTrip from '../CreateMyTripPlane/CreateMyTrip'
 import ScreenProfile from './screen/ScreenProfile/ScreenProfile';
+import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
 
 const HomeStack = createStackNavigator (
@@ -27,6 +28,19 @@ const HomeStack = createStackNavigator (
   }
 );
 
+const Profile = createStackNavigator (
+  {
+    Home: {
+      screen: ScreenProfile,
+    },Profiledetail:{
+       screen: Profiledetail,
+    }
+    
+  },
+  {
+    headerMode: 'none',
+  }
+);
 class ButtonTrip extends Component{
   render(){
     return(
@@ -93,7 +107,7 @@ const TabNavigator = createBottomTabNavigator (
       }),
     },
     Profile: {
-      screen: ScreenProfile,
+      screen: Profile,
       navigationOptions: () => ({
         tabBarIcon: ({focused}) =>
           focused

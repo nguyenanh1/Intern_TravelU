@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     View, Text, ScrollView, ImageBackground, Image
 } from 'react-native'
+import { Button } from 'react-native-elements';
 export default class Profiledetail extends Component {
     render() {
         return (
@@ -75,6 +76,15 @@ export default class Profiledetail extends Component {
                             </View>
                             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
                                 <Text style={{ color: 'gray', fontSize: 14, }}>Appril 22th</Text>
+                            </View>
+                        </View>
+
+                        <View>
+                            <View style={{margin:'5%',flex:2}}>
+                                <ImageBackground source={require('../../../../../resource/image/hagiang.png')}
+                                style={{width:300,height:500}}>
+                                    <Button style={{backgroundColor:'white'}}><Text>Delete</Text></Button>
+                                </ImageBackground>
                             </View>
                         </View>
                     </View>

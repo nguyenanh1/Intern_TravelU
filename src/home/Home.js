@@ -13,16 +13,25 @@ import CreateMyTrip from '../CreateMyTripPlane/CreateMyTrip'
 import ScreenProfile from './screen/ScreenProfile/ScreenProfile';
 import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
-import AddPlace from '../AddPlace/AddPlace'
-import PlaceDetail from '../PlaceDetail/PlaceDetail'
-import AddBudget from '../AddBudget/AddBudget'
+import AddPlace from '../AddPlace/AddPlace';
+import Homehotel from '../HomeHotel/Homehotel';
+import HomeRestaurant from '../HomeRestaurant/HomeRestaurant';
+import HomeTours from '../HomeTours/HomeTours';
+
 const HomeStack = createStackNavigator (
   {
     Home: {
       screen: ScreenHome,
     },Search:{
        screen: Search,
+    },Homehotel:{
+      screen: Homehotel,
+    },HomeRestaurant:{
+      screen:HomeRestaurant
+    },HomeTours:{
+      screen:HomeTours
     }
+    
   },
   {
     headerMode: 'none',
@@ -47,7 +56,7 @@ const Profile = createStackNavigator (
        screen: Profiledetail,
     },Profile:{
       screen:ScreenProfile
-    },
+    }
   },
   {
     headerMode: 'none',
@@ -79,11 +88,7 @@ const CreatTripStack = createStackNavigator (
       screen: CreateMyTrip,
     },AddPlace:{
        screen: AddPlace,
-    },PlaceDetail:{
-      screen: PlaceDetail
-    },AddBudget:{
-      screen: AddBudget
-    }  
+    }
   },
   {
     headerMode: 'none',

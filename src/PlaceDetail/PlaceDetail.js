@@ -7,7 +7,10 @@ import {
   Text,
   View,
   RefreshControl,
+  TouchableHighlight,
+  Image
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient'
 const HEADER_MAX_HEIGHT = 300;
 const HEADER_MIN_HEIGHT = Platform.OS === 'ios' ? 60 : 73;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
@@ -76,7 +79,7 @@ export default class PlaceDetail extends Component {
         <StatusBar
           translucent
           barStyle="light-content"
-          backgroundColor="rgba(0, 0, 0, 0.251)"
+          backgroundColor="transparent"
         />
         <Animated.ScrollView
           style={styles.fill}
@@ -118,7 +121,7 @@ export default class PlaceDetail extends Component {
                 transform: [{translateY: imageTranslate}],
               },
             ]}
-            source={require ('./images/cat.jpg')}
+            source={require ('../../resource/image/backgrountoplogin.png')}
           />
         </Animated.View>
         <Animated.View
@@ -129,7 +132,32 @@ export default class PlaceDetail extends Component {
             },
           ]}
         >
-          <Text style={styles.title}>Title</Text>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#F117BE', '#8D0CBA']}
+          >
+            <View style={styles.toolbar}>
+              <TouchableHighlight
+                underlayColor="transparent"
+                style={styles.icback}
+                onPress={() => {
+                  this.props.navigation.goBack ();
+                }}
+              >
+                <Image source={require ('../../resource/image/ic_back.png')} />
+              </TouchableHighlight>
+              <Text style={[styles.title, {flex: 7}]}>Create trip plan</Text>
+              <TouchableHighlight style={{flex: 1}}>
+                <Image
+                  source={require ('../../resource/image/ic_search_write.png')}
+                />
+              </TouchableHighlight>
+              <TouchableHighlight style={{flex: 1}}>
+                <Image source={require ('../../resource/image/map.png')} />
+              </TouchableHighlight>
+            </View>
+          </LinearGradient>
         </Animated.View>
       </View>
     );
@@ -142,6 +170,19 @@ const styles = StyleSheet.create ({
   },
   content: {
     flex: 1,
+  },
+  toolbar: {
+    marginTop: 40,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 18,
+  },
+  icback:{
+    flex: 1
   },
   header: {
     position: 'absolute',

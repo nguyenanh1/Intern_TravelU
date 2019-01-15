@@ -13,7 +13,8 @@ import CreateMyTrip from '../CreateMyTripPlane/CreateMyTrip'
 import ScreenProfile from './screen/ScreenProfile/ScreenProfile';
 import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
-import AddPlace from '../AddPlace/AddPlace'
+import AddPlace from '../AddPlace/AddPlace';
+import Homehotel from '../HomeHotel/Homehotel';
 
 const HomeStack = createStackNavigator (
   {
@@ -22,6 +23,9 @@ const HomeStack = createStackNavigator (
     },Search:{
        screen: Search,
     }
+    ,HomeHotel:{
+      screen: Homehotel,
+   }
     
   },
   {

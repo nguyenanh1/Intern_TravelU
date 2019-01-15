@@ -24,8 +24,11 @@ export default class ViewItemSearch extends Component {
                 <View style={{ elevation: 1, height: 250, borderRadius: 10, margin: '5%' }}>
                     <ImageBackground
                         source={this.props.item.image}
-                        style={{ width: '106%', marginLeft: '-6%', height: 180 }}
-                        imageStyle={{ borderRadius: 25 }}>
+                        style={{ width: '106%', marginLeft: '-6%', height: 180, borderRadius: 10 }}
+                        borderTopLeftRadius={10}
+                        borderTopRightRadius={10}
+                        borderRadius={10}
+                    >
                         <View style={{ justifyContent: 'flex-end', flexDirection: 'row', marginTop: '-5%' }}>
                             <TouchableOpacity>
                                 <Text style={{ color: 'white', fontSize: 30, fontWeight: 'bold', marginRight: '2%', borderRadius: 10 }}>...</Text>

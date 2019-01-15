@@ -8,6 +8,7 @@ import {
   TextInput,
   Switch,
   DatePickerAndroid,
+  ToastAndroid,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './style';
@@ -18,35 +19,43 @@ export default class CreateMyTripPlane extends Component {
   constructor (props) {
     super (props);
     this.state = {
-      getDateNow: () => {
-        var today = new Date ();
-        var dd = today.getDate ();
-        var mm = today.getMonth () + 1; //January is 0!
-        var yyyy = today.getFullYear ();
-        if (dd < 10) {
-          dd = '0' + dd;
-        }
-
-        if (mm < 10) {
-          mm = '0' + mm;
-        }
-
-        today = dd + '/' + mm + '/' + yyyy;
-        return today;
-      },
       from: '',
       to: '',
-      name: () => {
-        let from = this.state.from;
-        let to = this.state.to;
-        if (from == '' || to == '') {
-          return '';
-        } else {
-          return '3 days to ' + to + ' from ' + from;
-        }
-      },
+      dateForm: null,
+      dateFormText: '',
+      dateTo: null,
+      dateToText: '',
       privateValue: false,
     };
+  }
+  name () {
+    let from = this.state.from;
+    let to = this.state.to;
+    let dateFrom = this.state.dateForm;
+    let dateTo = this.state.dateTo;
+    var timeDiff;
+    var diffDays;
+    if (dateFrom != null && dateTo != null) {
+      timeDiff = Math.abs (dateTo.getTime () - dateFrom.getTime ());
+      diffDays = Math.ceil (timeDiff / (1000 * 3600 * 24));
+    }
+    if (from == '' || to == '' || diffDays == null) {
+      return '';
+    } else {
+      return diffDays + ' days to ' + to + ' from ' + from;
+    }
+  }
+  getDate (day, month, year) {
+    if (day < 10) {
+      day = '0' + day;
+    }
+
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    let today = day + '/' + month + '/' + year;
+    return today;
   }
   changeTo (text) {
     this.setState ({
@@ -58,24 +67,63 @@ export default class CreateMyTripPlane extends Component {
       from: text,
     });
   }
-  pickFrom () {
+  pickFrom = async () => {
     try {
-      const {action, year, month, day} = DatePickerAndroid.open ({
+      const {action, year, month, day} = await DatePickerAndroid.open ({
         // Use `new Date()` for current date.
         // May 25 2020. Month 0 is January.
-        date: new Date (2020, 4, 25),
+        date: new Date (),
       });
-      if (action === DatePickerAndroid.dateSetAction) {
+      if (action !== DatePickerAndroid.dismissedAction) {
+        this.setState ({
+          dateForm: new Date (year, month, day),
+          dateFormText: this.getDate (day, month + 1, year),
+        });
       }
     } catch ({code, message}) {
       console.warn ('Cannot open date picker', message);
     }
-  }
+  };
+  pickTo = async () => {
+    try {
+      const {action, year, month, day} = await DatePickerAndroid.open ({
+        // Use `new Date()` for current date.
+        // May 25 2020. Month 0 is January.
+        date: new Date (),
+      });
+      if (action !== DatePickerAndroid.dismissedAction) {
+        this.setState ({
+          dateTo: new Date (year, month, day),
+          dateToText: this.getDate (day, month + 1, year),
+        });
+      }
+    } catch ({code, message}) {
+      console.warn ('Cannot open date picker', message);
+    }
+  };
   changeSwitch () {
     getValuePrivate = this.state.privateValue;
     this.setState ({
       privateValue: !getValuePrivate,
     });
+  }
+  nextStep () {
+    // let from = this.state.from;
+    // let to = this.state.to;
+    // let dateFrom = this.state.dateForm;
+    // let dateTo = this.state.dateTo;
+    // var timeDiff;
+    // var diffDays;
+    // if (dateFrom != null && dateTo != null) {
+    //   timeDiff = Math.abs (dateTo.getTime () - dateFrom.getTime ());
+    //   diffDays = Math.ceil (timeDiff / (1000 * 3600 * 24));
+    // }
+    // if (from == '' || to == '' || diffDays == null) {
+    //   ToastAndroid.show ('Chưa chọn xong', ToastAndroid.SHORT);
+    // } else {
+    //   this.props.navigation.navigate ('AddPlace');
+    // }
+    this.props.navigation.navigate ('AddPlace');
   }
   render () {
     return (
@@ -109,7 +157,7 @@ export default class CreateMyTripPlane extends Component {
               </View>
               <Text style={styles.titlename}>Plan name</Text>
               <Text style={styles.namecontainer}>
-                {this.state.name ()}
+                {this.name ()}
               </Text>
             </View>
           </TouchableHighlight>
@@ -161,11 +209,16 @@ export default class CreateMyTripPlane extends Component {
               </View>
               <Text style={styles.titlename}>Ngày bắt đầu</Text>
               <Text style={styles.namecontainer}>
-                {this.state.getDateNow ()}
+                {this.state.dateFormText}
               </Text>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight underlayColor="transparent">
+          <TouchableHighlight
+            underlayColor="transparent"
+            onPress={() => {
+              this.pickTo ();
+            }}
+          >
             <View style={[styles.name, {marginTop: 5}]} elevation={5}>
               <View style={{marginLeft: 10, flex: 1}}>
                 <Image
@@ -174,7 +227,7 @@ export default class CreateMyTripPlane extends Component {
               </View>
               <Text style={styles.titlename}>Ngày quay lại</Text>
               <Text style={styles.namecontainer}>
-                {this.state.getDateNow ()}
+                {this.state.dateToText}
               </Text>
             </View>
           </TouchableHighlight>
@@ -222,7 +275,7 @@ export default class CreateMyTripPlane extends Component {
         </View>
         <TouchableHighlight
           onPress={() => {
-            this.props.navigation.navigate ('AddPlace');
+            this.nextStep ();
           }}
           style={{
             position: 'absolute',

@@ -54,19 +54,20 @@ export default class AddBudget extends Component {
               <Text style={{color:"#9F9F9F",fontSize: 14, fontFamily:"Roboto Regular", marginLeft: 20}}>Thêm Budget</Text>
             </View>
           </TouchableHighlight>
-          <View style={{padding: 16}}>
+          <View>
             <FlatList 
                 data={databudget}
                 renderItem={({item,index})=>{
                     return <ViewItemBudget item={item} index={index}/>
                 }}
-                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+                style={{padding: 16}}
             />
           </View>
         </View>
         <TouchableHighlight
           onPress={() => {
-            this.props.navigation.navigate ('AddBudget');
+            this.props.navigation.navigate ('');
           }}
           style={{
             position: 'absolute',

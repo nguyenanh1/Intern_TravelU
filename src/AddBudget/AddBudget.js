@@ -1,10 +1,17 @@
 import React, {Component} from 'react';
-import {View, Text, StatusBar, TouchableHighlight, Image, FlatList} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {
+  View,
+  Text,
+  StatusBar,
+  TouchableHighlight,
+  Image,
+  FlatList,
+} from 'react-native';
 import styles from './style';
-import dataplace from './dataplace'
-import ViewItemPlace from './ViewItemPlace'
-export default class AddPlace extends Component {
+import LinearGradient from 'react-native-linear-gradient';
+import databudget from './databudget'
+import ViewItemBudget from './ViewItemBudget'
+export default class AddBudget extends Component {
   constructor (props) {
     super (props);
   }
@@ -27,39 +34,35 @@ export default class AddPlace extends Component {
             >
               <Image source={require ('../../resource/image/ic_back.png')} />
             </TouchableHighlight>
-            <Text style={[styles.title, {flex: 7}]}>Create trip plan</Text>
+            <Text style={[styles.title, {flex: 8}]}>Create trip plan</Text>
             <TouchableHighlight style={{flex: 1}}>
               <Image
-                source={require ('../../resource/image/ic_search_write.png')}
+                source={require ('../../resource/image/ic_add_people.png')}
               />
-            </TouchableHighlight>
-            <TouchableHighlight style={{flex: 1}}>
-              <Image source={require ('../../resource/image/map.png')} />
             </TouchableHighlight>
           </View>
         </LinearGradient>
-        <View style={
-              {
-                marginBottom: 180,
-                backgroundColor:"#F3F5F9"
-              }
-            }> 
-          <View style={styles.fillter}>
-            <View style={{flex: 7}}>
-              <Text>Sort by: Popular</Text>
+        <View
+          style={{
+            marginBottom: 250,
+            backgroundColor: '#FFFFFF',
+          }}
+        >
+          <TouchableHighlight>
+            <View style={styles.addbudget}>
+              <Image source={require ('../../resource/image/ic_add_wallest.png')} />
+              <Text style={{color:"#9F9F9F",fontSize: 14, fontFamily:"Roboto Regular", marginLeft: 20}}>Thêm Budget</Text>
             </View>
-            <View style={{flex: 3,flexDirection:"row",justifyContent:"flex-end", marginRight: 20, alignItems:"center"}}>
-                <Image source={require("../../resource/image/ic_fillter.png")}/>
-                <Text style={{marginLeft: 10}}>Fillter</Text>
-            </View>
+          </TouchableHighlight>
+          <View style={{padding: 16}}>
+            <FlatList 
+                data={databudget}
+                renderItem={({item,index})=>{
+                    return <ViewItemBudget item={item} index={index}/>
+                }}
+                showsHorizontalScrollIndicator={false}
+            />
           </View>
-          <FlatList 
-            data={dataplace}
-            renderItem={({item,index})=>{
-              return <ViewItemPlace item={item} index={index}/>
-            }}
-            
-          />
         </View>
         <TouchableHighlight
           onPress={() => {

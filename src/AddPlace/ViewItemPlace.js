@@ -6,15 +6,55 @@ import {
   TouchableHighlight,
   Image,
   StyleSheet,
+  Alert,
 } from 'react-native';
 import {Rating} from 'react-native-elements';
 
 export default class ViewItemPlace extends Component {
-  changeMoney(props){
-      return props.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')+"đ"; 
+  constructor (props) {
+    super (props);
+    this.state = {
+      backgroundThem: '#59BAF8',
+      colorThem: '#FFFFFF',
+      add: false,
+      titleAdd: 'Thêm',
+      arrThem: null
+    };
   }
-  pressAdd(){
-      
+  changeMoney (props) {
+    return props.toFixed (2).replace (/\d(?=(\d{3})+\.)/g, '$&,') + 'đ';
+  }
+  pressAdd () {
+    if (this.state.add == false) {
+      this.setState ({
+        backgroundThem: '#F3F5F9',
+        colorThem: '#777777',
+        add: true,
+        titleAdd: 'Đã Thêm',
+      });
+    } else {
+      Alert.alert (
+        'Thông báo',
+        'Bạn có muốn hủy ?',
+        [
+          {
+            text: 'Không',
+            style: 'cancel',
+          },
+          {
+            text: 'Có',
+            onPress: () =>
+              this.setState ({
+                backgroundThem: '#59BAF8',
+                colorThem: '#FFFFFF',
+                add: false,
+                titleAdd: 'Thêm',
+              }),
+          },
+        ],
+        {cancelable: true}
+      );
+    }
   }
   render () {
     return (
@@ -100,36 +140,41 @@ export default class ViewItemPlace extends Component {
                   color: '#FF5526',
                 }}
               >
-                {this.changeMoney(this.props.item.pernight)}
+                {this.changeMoney (this.props.item.pernight)}
               </Text>
             </View>
           </View>
           <View style={styles.controll}>
-            <TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => {
+                this.pressAdd ();
+              }}
+              underlayColor="transparent"
+            >
               <View
                 style={{
                   width: 90,
                   height: 35,
-                  backgroundColor: '#59BAF8',
+                  backgroundColor: this.state.backgroundThem,
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: 5,
-                  margin:5
+                  margin: 5,
                 }}
               >
                 <Text
                   style={{
                     fontSize: 14,
                     fontFamily: 'Roboto Regular',
-                    color: '#FFFFFF',
+                    color: this.state.colorThem,
                   }}
                 >
-                  Thêm
+                  {this.state.titleAdd}
                 </Text>
               </View>
             </TouchableHighlight>
             <TouchableHighlight>
-            <View
+              <View
                 style={{
                   width: 90,
                   height: 35,
@@ -137,7 +182,7 @@ export default class ViewItemPlace extends Component {
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: 5,
-                  margin:5
+                  margin: 5,
                 }}
               >
                 <Text

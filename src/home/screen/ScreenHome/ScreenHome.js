@@ -59,7 +59,9 @@ export default class Search extends Component {
                 <Text style={styles.textbuton}>Trip plans</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              this.props.navigation.navigate ('Homehotel');
+            }}>
               <View style={styles.button}>
                 <Image source={icHotel} style={styles.imageButton} />
                 <Text style={styles.textbuton}>Hotels</Text>
@@ -71,13 +73,15 @@ export default class Search extends Component {
                 <Text style={styles.textbuton}>Flights</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              this.props.navigation.navigate ('HomeRestaurant'); }} >
               <View style={styles.button}>
                 <Image source={icRestaurent} style={styles.imageButton} />
                 <Text style={styles.textbuton}>Restaurents</Text>
               </View>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              this.props.navigation.navigate ('HomeTours'); }}>
               <View style={styles.button}>
                 <Image source={icBus} style={styles.imageButton} />
                 <Text style={styles.textbuton}>Tours</Text>

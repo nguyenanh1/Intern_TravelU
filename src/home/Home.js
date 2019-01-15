@@ -15,6 +15,8 @@ import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
 import AddPlace from '../AddPlace/AddPlace';
 import Homehotel from '../HomeHotel/Homehotel';
+import HomeRestaurant from '../HomeRestaurant/HomeRestaurant';
+import HomeTours from '../HomeTours/HomeTours';
 
 const HomeStack = createStackNavigator (
   {
@@ -22,10 +24,13 @@ const HomeStack = createStackNavigator (
       screen: ScreenHome,
     },Search:{
        screen: Search,
-    }
-    ,HomeHotel:{
+    },Homehotel:{
       screen: Homehotel,
-   }
+    },HomeRestaurant:{
+      screen:HomeRestaurant
+    },HomeTours:{
+      screen:HomeTours
+    }
     
   },
   {

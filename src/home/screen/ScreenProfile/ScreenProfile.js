@@ -28,7 +28,7 @@ export default class ScreeProfile extends Component {
                     </View>
                 </View>
 
-                <View style={{ flex: 8, marginTop: '2%', backgroundColor: 'white', borderTopWidth: 0.5, borderBottomWidth: 0.5, borderColor: 'black' }}>
+                <View style={{ flex: 12, marginTop: '2%', backgroundColor: 'white', borderTopWidth: 0.5, borderBottomWidth: 0.5, borderColor: 'black' }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
                             <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>

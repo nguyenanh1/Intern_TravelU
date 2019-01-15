@@ -15,10 +15,10 @@ export default class Profiledetail extends Component {
                 <ScrollView>
                     <View style={{ flex: 2 }}>
                         <ImageBackground source={require('../../../../../resource/image/backgrountoplogin.png')}
-                            style={{ width: '100%', height: 160 }}>
+                            style={{ width: '100%', height: 160, overflow:"hidden" }}>
                             <View style={{ marginTop: 20, flexDirection: 'row' }}>
                                 <View style={{ flex: 0.5, justifyContent: 'center', alignItems: 'flex-start' }}>
-                                    <TouchableOpacity onPress={() => { this.props.navigation.navigate('Profiledetail') }}>
+                                    <TouchableOpacity onPress={() => {  this.props.navigation.goBack(); }}>
                                         <Image source={require('../../../../../resource/image/ic_back.png')} ></Image>
                                     </TouchableOpacity>
                                 </View>

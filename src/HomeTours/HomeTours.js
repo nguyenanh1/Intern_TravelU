@@ -9,10 +9,10 @@ import icTravelu from '../../resource/image/ic_travelu.png';
 import icplace from '../../resource/image/ic_place.png';
 import styles from './style';
 import { TextInput } from 'react-native-gesture-handler';
-import dataht from './DataHotel';
+import datatours from './DataTours';
 import datapl from './DataPlace';
-import Viewhotel from './Viewhotel';
-import Viewplace from './ViewPlace';
+import ViewTours from './ViewTours';
+import ViewPlace from './ViewPlace';
 
 export default class Homehotel extends Component {
     render() {
@@ -22,7 +22,7 @@ export default class Homehotel extends Component {
                     <ImageBackground source={bghome} style={styles.bgTop}>
                         <StatusBar backgroundColor="transparent" translucent={true} />
                         <View style={styles.toolbar}>
-                            <TouchableOpacity onPress={() => {this.props.navigation.goBack(); }}>
+                            <TouchableOpacity onPress={() => { this.props.navigation.goBack();}}>
                                 <Image source={icback} />
                             </TouchableOpacity>
                             <View style={{ flex: 5, alignItems: 'center' }}><Image source={icTravelu} /></View>
@@ -39,23 +39,23 @@ export default class Homehotel extends Component {
                             <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={["#F117BE", "#8D0CBA"]}
                                 style={{ width: '100%', height: '100%', alignItems: 'center', borderRadius: 10, justifyContent: 'center' }}                        >
 
-                                <Text style={[{ color: "white", fontSize: 14, fontWeight: "bold" }]}>Find Hottels</Text>
+                                <Text style={[{ color: "white", fontSize: 14, fontWeight: "bold" }]}>Find Tours</Text>
 
                             </LinearGradient></TouchableOpacity>
                     </View>
                 </View>
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Top khách sạn</Text>
+                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Activity & Tours in Ha Noi </Text>
                         <TouchableOpacity style={{ marginRight: 10 }} >
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>
                     <FlatList
-                        data={dataht}
+                        data={datatours}
                         renderItem={({ item, index }) => {
                             return (
-                                <Viewhotel
+                                <ViewTours
                                     item={item}
                                     index={index}
                                     parentFlatList={this}
@@ -68,16 +68,16 @@ export default class Homehotel extends Component {
                 </View>
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Top khách sạn lãng mạn</Text>
+                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Activity & Tours in Kien giang </Text>
                         <TouchableOpacity style={{ marginRight: 10 }} >
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>
                     <FlatList
-                        data={dataht}
+                        data={datatours}
                         renderItem={({ item, index }) => {
                             return (
-                                <Viewhotel
+                                <ViewTours
                                     item={item}
                                     index={index}
                                     parentFlatList={this}
@@ -90,29 +90,7 @@ export default class Homehotel extends Component {
                 </View>
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Homstay view đẹp ngất ngây</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} >
-                            <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <FlatList
-                        data={dataht}
-                        renderItem={({ item, index }) => {
-                            return (
-                                <Viewhotel
-                                    item={item}
-                                    index={index}
-                                    parentFlatList={this}
-                                />
-                            );
-                        }}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal={true}
-                    />
-                </View>
-                <View style={{ marginTop: 10, marginLeft: 5 }}>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Địa điểm phổ biến</Text>
+                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Activity & Tours in Popular Destinasions </Text>
                         <TouchableOpacity style={{ marginRight: 10 }} >
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
@@ -121,7 +99,7 @@ export default class Homehotel extends Component {
                         data={datapl}
                         renderItem={({ item, index }) => {
                             return (
-                                <Viewplace
+                                <ViewPlace
                                     item={item}
                                     index={index}
                                     parentFlatList={this}

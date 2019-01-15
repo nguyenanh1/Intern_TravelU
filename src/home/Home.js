@@ -13,6 +13,7 @@ import CreateMyTrip from '../CreateMyTripPlane/CreateMyTrip'
 import ScreenProfile from './screen/ScreenProfile/ScreenProfile';
 import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
+import AddPlace from '../AddPlace/AddPlace'
 
 const HomeStack = createStackNavigator (
   {
@@ -72,6 +73,28 @@ class ButtonTrip extends Component{
   }
 }
 
+const CreatTripStack = createStackNavigator (
+  {
+    CreateTrip: {
+      screen: CreateMyTrip,
+    },AddPlace:{
+       screen: AddPlace,
+    }
+  },
+  {
+    headerMode: 'none',
+  }
+);
+CreatTripStack.navigationOptions=({navigation}) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+      tabBarVisible = false;
+  }
+  return {
+      tabBarVisible,
+  };
+}
+
 const TabNavigator = createBottomTabNavigator (
   {
     Home: {
@@ -106,9 +129,10 @@ const TabNavigator = createBottomTabNavigator (
       }),
     },
     CreateTrip: {
-      screen: CreateMyTrip,
+      screen: CreatTripStack,
       navigationOptions: () => ({
-        tabBarIcon: <ButtonTrip />
+        tabBarIcon: <ButtonTrip />,
+        tabBarVisible: false,
       }), 
     },
     Tab3: {

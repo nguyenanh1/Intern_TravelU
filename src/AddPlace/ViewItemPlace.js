@@ -22,7 +22,9 @@ export default class ViewItemPlace extends Component {
     };
   }
   changeMoney (props) {
-    return props.toFixed (2).replace (/\d(?=(\d{3})+\.)/g, '$&,') + 'đ';
+    let money = (props.toFixed (2).replace (/\d(?=(\d{3})+\.)/g, '$&,')).toString();
+    money = money.substring(0,money.length-3) + 'đ';
+    return money;                                                                             ``````
   }
   pressAdd () {
     if (this.state.add == false) {

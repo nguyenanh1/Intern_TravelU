@@ -144,7 +144,7 @@ export default class CreateMyTripPlane extends Component {
             >
               <Image source={require ('../../resource/image/ic_back.png')} />
             </TouchableHighlight>
-            <Text style={[styles.title]}>Create trip plan</Text>
+            <Text style={[styles.title]}>Trip plan</Text>
           </View>
         </LinearGradient>
         <View style={[[styles.main]]}>

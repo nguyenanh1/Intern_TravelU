@@ -18,7 +18,8 @@ import Homehotel from '../HomeHotel/Homehotel';
 import HomeRestaurant from '../HomeRestaurant/HomeRestaurant';
 import HomeTours from '../HomeTours/HomeTours';
 import AddBudget from '../AddBudget/AddBudget';
-import FinishCreate from '../FinishCreate/FinishCreate'
+import FinishCreate from '../FinishCreate/FinishCreate';
+
 const HomeStack = createStackNavigator (
   {
     Home: {

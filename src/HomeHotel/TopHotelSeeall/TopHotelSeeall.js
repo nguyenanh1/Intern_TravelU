@@ -3,16 +3,14 @@ import {
     View, Text, ScrollView, ImageBackground, Image, FlatList, TouchableOpacity, StatusBar, TouchableHighlight,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient'
-import bghome from '../../resource/image/bghome.png';
-import icback from '../../resource/image/ic_back.png'
-import icTravelu from '../../resource/image/ic_travelu.png';
-import icplace from '../../resource/image/ic_place.png';
+import bghome from '../../../resource/image/bghome.png';
+import icback from '../../../resource/image/ic_back.png'
+import icTravelu from '../../../resource/image/ic_travelu.png';
+import icplace from '../../../resource/image/ic_place.png';
 import styles from './style';
 import { TextInput } from 'react-native-gesture-handler';
-import dataht from './DataHotel';
-import datapl from './DataPlace';
-import Viewhotel from './Viewhotel';
-import Viewplace from './ViewPlace';
+import DatatopHotel from './../TopHotelSeeall/DatatopHotel';
+import ViewtopHotelSeeall from './../TopHotelSeeall/ViewtopHotelSeeall';
 
 export default class Homehotel extends Component {
     render() {
@@ -52,76 +50,10 @@ export default class Homehotel extends Component {
                         </TouchableOpacity>
                     </View>
                     <FlatList
-                        data={dataht}
+                        data={DatatopHotel}
                         renderItem={({ item, index }) => {
                             return (
-                                <Viewhotel
-                                    item={item}
-                                    index={index}
-                                    parentFlatList={this}
-                                />
-                            );
-                        }}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal={true}
-                    />
-                </View>
-                <View style={{ marginTop: 10, marginLeft: 5 }}>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Top khách sạn lãng mạn</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} >
-                            <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <FlatList
-                        data={dataht}
-                        renderItem={({ item, index }) => {
-                            return (
-                                <Viewhotel
-                                    item={item}
-                                    index={index}
-                                    parentFlatList={this}
-                                />
-                            );
-                        }}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal={true}
-                    />
-                </View>
-                <View style={{ marginTop: 10, marginLeft: 5 }}>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Homstay view đẹp ngất ngây</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} >
-                            <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <FlatList
-                        data={dataht}
-                        renderItem={({ item, index }) => {
-                            return (
-                                <Viewhotel
-                                    item={item}
-                                    index={index}
-                                    parentFlatList={this}
-                                />
-                            );
-                        }}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal={true}
-                    />
-                </View>
-                <View style={{ marginTop: 10, marginLeft: 5 }}>
-                    <View style={{ flex: 1, flexDirection: 'row' }}>
-                        <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Địa điểm phổ biến</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} >
-                            <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <FlatList
-                        data={datapl}
-                        renderItem={({ item, index }) => {
-                            return (
-                                <Viewplace
+                                <ViewtopHotelSeeall
                                     item={item}
                                     index={index}
                                     parentFlatList={this}

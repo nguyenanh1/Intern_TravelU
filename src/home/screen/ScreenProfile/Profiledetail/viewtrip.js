@@ -43,7 +43,7 @@ export default class ViewItemSearch extends Component {
                                 <View style={{ flex: 1, alignItems: 'center' }}>
                                     <Image source={this.props.item.ma}></Image>
                                 </View>
-                                <View style={{ flex: 10 }}>
+                                <View style={{ flex: 10,opacity:2 }}>
                                     <Text style={{ color: 'white', fontWeight: 'bold', opacity: 2 }}>{this.props.item.name}</Text>
                                     <Text style={{ color: 'white', opacity: 2 }}>{this.props.item.diachi}</Text>
                                 </View>

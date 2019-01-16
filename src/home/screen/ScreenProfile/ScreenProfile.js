@@ -31,7 +31,7 @@ export default class ScreeProfile extends Component {
                 <View style={{ flex: 12, marginTop: '2%', backgroundColor: 'white', borderTopWidth: 0.5, borderBottomWidth: 0.5, borderColor: 'black' }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/addplace.png')} style={{}} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}>
                             <TouchableOpacity onPress={() => { }} underlayColor="transparent" >
@@ -45,7 +45,7 @@ export default class ScreeProfile extends Component {
                     </View>
                     <View style={{ flex: 1, borderBottomColor: 'black', borderBottomWidth: 0.5, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/mylove.png')} style={{}} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}>
                             <TouchableOpacity onPress={() => { }} underlayColor="transparent" >
@@ -59,7 +59,7 @@ export default class ScreeProfile extends Component {
                     </View>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/ratetravelu.png')} style={{}} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                             <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Rate TravelU</Text></TouchableOpacity>
@@ -72,7 +72,7 @@ export default class ScreeProfile extends Component {
                     </View>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/findfriend.png')} style={{ }} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                             <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Find Friends</Text></TouchableOpacity>
@@ -85,7 +85,7 @@ export default class ScreeProfile extends Component {
                     </View>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/downplan.png')} style={{ }} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                             <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Download a Plan</Text></TouchableOpacity>
@@ -98,7 +98,7 @@ export default class ScreeProfile extends Component {
                     </View>
                     <View style={{ flex: 1, borderBottomColor: 'black', borderBottomWidth: 0.5, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/downplace.png')} style={{ }} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                             <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Download place</Text></TouchableOpacity>
@@ -111,7 +111,7 @@ export default class ScreeProfile extends Component {
                     </View>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
-                            <Image source={require('../../../../resource/image/ic_location.png')} style={{ width:25, height:25 }} ></Image>
+                            <Image source={require('../../../../resource/image/setttingpink.png')} style={{ }} ></Image>
                         </View>
                         <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                             <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Setting</Text></TouchableOpacity>

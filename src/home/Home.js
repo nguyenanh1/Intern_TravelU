@@ -20,7 +20,7 @@ import TopHotelSeeall from '../HomeHotel/TopHotelSeeall/TopHotelSeeall';
 import HomeTours from '../HomeTours/HomeTours';
 import AddBudget from '../AddBudget/AddBudget';
 import FinishCreate from '../FinishCreate/FinishCreate';
-
+import TripPlan from '../TripPlan/TripPlan'
 const HomeStack = createStackNavigator (
   {
     Home: {
@@ -35,6 +35,8 @@ const HomeStack = createStackNavigator (
       screen:HomeTours
     },TopHotelSeeall:{
       screen:TopHotelSeeall
+    },TripPlan:{
+      screen:TripPlan
     }
     
   },

@@ -16,6 +16,7 @@ import Search from '../Search/Search';
 import AddPlace from '../AddPlace/AddPlace';
 import Homehotel from '../HomeHotel/Homehotel';
 import HomeRestaurant from '../HomeRestaurant/HomeRestaurant';
+import TopHotelSeeall from '../HomeHotel/TopHotelSeeall/TopHotelSeeall';
 import HomeTours from '../HomeTours/HomeTours';
 import AddBudget from '../AddBudget/AddBudget';
 import FinishCreate from '../FinishCreate/FinishCreate';
@@ -32,6 +33,8 @@ const HomeStack = createStackNavigator (
       screen:HomeRestaurant
     },HomeTours:{
       screen:HomeTours
+    },TopHotelSeeall:{
+      screen:TopHotelSeeall
     }
     
   },

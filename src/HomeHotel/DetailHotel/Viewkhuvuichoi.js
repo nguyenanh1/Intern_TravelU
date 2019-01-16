@@ -16,11 +16,7 @@ export default class ViewItemAdreess extends Component {
               imageSize={13}
             />
             <Text style={{ fontSize: 10, color: "#A5A4A4" }} >({this.props.item.numberate} Đánh giá)</Text>
-          </View>
-          <View style={{ flexDirection: "row", width: 140, marginLeft: 10 }}>
-            <Text style={{ flex: 1, opacity: 0.5, fontSize: 10 }}>{this.props.item.loaithue}</Text>
-            <Text style={{ flex: 1, opacity: 0.5, color: '#FF6600', fontSize: 12, fontWeight: 'bold', alignItems: 'flex-end' }}>{this.props.item.price} đ</Text>
-          </View>
+          </View>          
         </View>
       </TouchableOpacity>
     );

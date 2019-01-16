@@ -1,5 +1,5 @@
 import hotel1 from '../../../resource/image/chobe.png';
-import hotel2 from '../../../resource/image/place.png';
+import hotel2 from '../../../resource/image/chobe.png';
 const datasale = [
     {
         key: '1',

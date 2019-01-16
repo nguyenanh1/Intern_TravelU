@@ -8,9 +8,8 @@ import icsort from '../../../resource/image/sort_pink.png'
 import ictim from '../../../resource/image/ic_search_write.png';
 import icmap from '../../../resource/image/map.png';
 import styles from './style';
-import { TextInput } from 'react-native-gesture-handler';
-import DatatopHotel from './../TopHotelSeeall/DatatopHotel';
-import ViewtopHotelSeeall from './../TopHotelSeeall/ViewtopHotelSeeall';
+import datadidiem from '../DiadiemSeeall/DataDiadiem';
+import ViewTopdiadiem from '../DiadiemSeeall/ViewTopdiadiem';
 
 export default class Homehotel extends Component {
     render() {
@@ -26,33 +25,18 @@ export default class Homehotel extends Component {
                                     <Image source={icback} />
                                 </TouchableOpacity>
                                 <View style={{ flex: 5, alignItems: 'flex-start', justifyContent: 'center' }}>
-                                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'white' }}>Top khách sạn</Text>
-                                </View>
-                                    <TouchableOpacity style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }}>
-                                        <Image source={ictim}></Image>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }}>
-                                        <Image source={icmap}></Image>
-                                    </TouchableOpacity>
+                                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'white' }}>Địa điểm phổ biến</Text>
+                                </View>                                    
                             </View>
                         </LinearGradient>
                     </View>
                     <View style={{ backgroundColor: '#f3f5f9' }}>
                         <View style={{ marginTop: 8, }}>
-                            <View style={{ flex: 1, flexDirection: 'row', }}>
-                                <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 12, opacity: 0.5 }}>Sort by : Popular</Text>
-                                <TouchableOpacity style={{ marginRight: 10 }} >
-                                    <Image source={icsort}></Image>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{ marginRight: 10 }} >
-                                    <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>Fillter</Text>
-                                </TouchableOpacity>
-                            </View>
                             <FlatList
-                                data={DatatopHotel}
+                                data={datadidiem}
                                 renderItem={({ item, index }) => {
                                     return (
-                                        <ViewtopHotelSeeall
+                                        <ViewTopdiadiem
                                             item={item}
                                             index={index}
                                         />

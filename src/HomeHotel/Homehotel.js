@@ -71,7 +71,7 @@ export default class Homehotel extends Component {
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Top khách sạn lãng mạn</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} >
+                        <TouchableOpacity style={{ marginRight: 10 }} onPress={()=>{this.props.navigation.navigate('TopHotelSeeall')}} >
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>
@@ -115,7 +115,7 @@ export default class Homehotel extends Component {
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Địa điểm phổ biến</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} >
+                        <TouchableOpacity style={{ marginRight: 10 }}  onPress={()=>{this.props.navigation.navigate('TopDiadiem')}}>
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>

@@ -63,7 +63,7 @@ export default class AddPlace extends Component {
         </View>
         <TouchableHighlight
           onPress={() => {
-            this.props.navigation.navigate ('AddBudget');
+            this.props.navigation.navigate ("AddBudGet");
           }}
           style={{
             position: 'absolute',

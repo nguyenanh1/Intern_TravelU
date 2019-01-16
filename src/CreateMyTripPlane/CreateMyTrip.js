@@ -108,22 +108,22 @@ export default class CreateMyTripPlane extends Component {
     });
   }
   nextStep () {
-    // let from = this.state.from;
-    // let to = this.state.to;
-    // let dateFrom = this.state.dateForm;
-    // let dateTo = this.state.dateTo;
-    // var timeDiff;
-    // var diffDays;
-    // if (dateFrom != null && dateTo != null) {
-    //   timeDiff = Math.abs (dateTo.getTime () - dateFrom.getTime ());
-    //   diffDays = Math.ceil (timeDiff / (1000 * 3600 * 24));
-    // }
-    // if (from == '' || to == '' || diffDays == null) {
-    //   ToastAndroid.show ('Chưa chọn xong', ToastAndroid.SHORT);
-    // } else {
-    //   this.props.navigation.navigate ('AddPlace');
-    // }
-    this.props.navigation.navigate ('AddPlace');
+    let from = this.state.from;
+    let to = this.state.to;
+    let dateFrom = this.state.dateForm;
+    let dateTo = this.state.dateTo;
+    var timeDiff;
+    var diffDays;
+    if (dateFrom != null && dateTo != null) {
+      timeDiff = Math.abs (dateTo.getTime () - dateFrom.getTime ());
+      diffDays = Math.ceil (timeDiff / (1000 * 3600 * 24));
+    }
+    if (from == '' || to == '' || diffDays == null) {
+      ToastAndroid.show ('Chưa chọn xong', ToastAndroid.SHORT);
+    } else {
+      this.props.navigation.navigate ('AddPlace');
+    }
+    // this.props.navigation.navigate ('AddPlace');
   }
   render () {
     return (

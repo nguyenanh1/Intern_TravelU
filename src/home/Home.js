@@ -17,7 +17,8 @@ import AddPlace from '../AddPlace/AddPlace';
 import Homehotel from '../HomeHotel/Homehotel';
 import HomeRestaurant from '../HomeRestaurant/HomeRestaurant';
 import HomeTours from '../HomeTours/HomeTours';
-
+import AddBudget from '../AddBudget/AddBudget';
+import FinishCreate from '../FinishCreate/FinishCreate'
 const HomeStack = createStackNavigator (
   {
     Home: {
@@ -85,9 +86,13 @@ class ButtonTrip extends Component{
 const CreatTripStack = createStackNavigator (
   {
     CreateTrip: {
-      screen: CreateMyTrip,
+      screen: CreateMyTrip
     },AddPlace:{
-       screen: AddPlace,
+       screen: AddPlace
+    },AddBudGet:{
+      screen: AddBudget
+    },FinishCreate:{
+      screen: FinishCreate
     }
   },
   {

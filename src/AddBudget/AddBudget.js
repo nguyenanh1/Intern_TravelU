@@ -67,7 +67,7 @@ export default class AddBudget extends Component {
         </View>
         <TouchableHighlight
           onPress={() => {
-            this.props.navigation.navigate ('');
+            this.props.navigation.navigate ('FinishCreate');
           }}
           style={{
             position: 'absolute',

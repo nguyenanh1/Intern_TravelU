@@ -22,6 +22,7 @@ import AddBudget from '../AddBudget/AddBudget';
 import FinishCreate from '../FinishCreate/FinishCreate';
 import TripPlan from '../TripPlan/TripPlan';
 import TopDiadiem from '../HomeHotel/DiadiemSeeall/TopDiadiem';
+import DetailHotel from '../HomeHotel/DetailHotel/DetailHotel'
 const HomeStack = createStackNavigator (
   {
     Home: {
@@ -40,6 +41,8 @@ const HomeStack = createStackNavigator (
       screen:TripPlan
     },TopDiadiem:{
       screen:TopDiadiem
+    },DetailHotel:{
+      screen:DetailHotel
     }
     
   },

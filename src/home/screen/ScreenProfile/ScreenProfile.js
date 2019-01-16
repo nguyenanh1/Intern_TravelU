@@ -62,48 +62,43 @@ export default class ScreeProfile extends Component {
                             <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Rate TravelU</Text></TouchableOpacity>
                         </View>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', marginRight: '5%' }}>
-                            <TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                                 <Image source={require('../../../../resource/image/ic_arrow.png')} style={{}} ></Image>
-                            </TouchableOpacity>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
                             <Image source={require('../../../../resource/image/findfriend.png')} style={{}} ></Image>
                         </View>
-                        <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
-                            <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Find Friends</Text></TouchableOpacity>
+                        <View style={{ flex: 10, justifyContent: 'center' }}>
+                            <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Find Friends</Text>
                         </View>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', marginRight: '5%' }}>
-                            <TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                                 <Image source={require('../../../../resource/image/ic_arrow.png')} style={{}} ></Image>
-                            </TouchableOpacity>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ flex: 1, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
                             <Image source={require('../../../../resource/image/downplan.png')} style={{}} ></Image>
                         </View>
-                        <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
-                            <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Download a Plan</Text></TouchableOpacity>
+                        <View style={{ flex: 10, justifyContent: 'center' }}>
+                            <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Download a Plan</Text>
                         </View>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', marginRight: '5%' }}>
-                            <TouchableOpacity onPress={() => { }} underlayColor="transparent" >
+
                                 <Image source={require('../../../../resource/image/ic_arrow.png')} style={{}} ></Image>
-                            </TouchableOpacity>
+
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ flex: 1, borderBottomColor: 'black', borderBottomWidth: 0.5, flexDirection: 'row' }}>
                         <View style={{ flex: 1.4, alignItems: 'center', justifyContent: 'center', }}>
                             <Image source={require('../../../../resource/image/downplace.png')} style={{}} ></Image>
                         </View>
-                        <View style={{ flex: 10, justifyContent: 'center' }}><TouchableOpacity onPress={() => { }} underlayColor="transparent" >
-                            <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Download place</Text></TouchableOpacity>
+                        <View style={{ flex: 10, justifyContent: 'center' }}>
+                            <Text style={{ textAlign: 'left', fontSize: 14, color: 'black' }}>Download place</Text>
                         </View>
                         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end', marginRight: '5%' }}>
-                            <TouchableOpacity onPress={() => { }} underlayColor="transparent" >
                                 <Image source={require('../../../../resource/image/ic_arrow.png')} style={{}} ></Image>
-                            </TouchableOpacity>
+                            
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{ flex: 1, flexDirection: 'row' }}>

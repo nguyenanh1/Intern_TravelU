@@ -5,7 +5,8 @@ import { Rating } from 'react-native-elements';
 export default class ViewtopHotelSeeall extends Component {
     render() {
         return (
-            <TouchableOpacity style={{ width: '100%', height: 140, marginTop: '2%', justifyContent: 'center', backgroundColor: 'white', }}>
+            <TouchableOpacity style={{ width: '100%', height: 140, marginTop: '2%', justifyContent: 'center', backgroundColor: 'white', }}
+            onPress={()=>{this.props.navigation.navigate('DetailHotel')}}>
                 <View style={styles.container}>
                     <View style={{flex:1.5}}>
                     <Image source={this.props.item.source} style={{ width: 120, height: 120, borderRadius: 10 }} />

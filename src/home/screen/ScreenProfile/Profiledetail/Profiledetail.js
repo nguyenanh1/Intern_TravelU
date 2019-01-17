@@ -23,7 +23,7 @@ export default class Profiledetail extends Component {
                                     </TouchableOpacity>
                                 </View>
                                 <View style={{ flex: 3, justifyContent: 'center', alignItems: 'flex-start' }}>
-                                    <Text style={{ color: 'white', fontSize: 20, textAlign: 'left' }}>Tuyen 3d</Text>
+                                    <Text style={{ color: 'white', fontFamily:'Roboto', fontSize: 16, textAlign: 'left' }}>Tuyen 3d</Text>
                                 </View>
                                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'flex-end' }}>
                                     <TouchableOpacity >
@@ -43,29 +43,29 @@ export default class Profiledetail extends Component {
                             <View style={{}}>
                                 <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
                                     <View style={{ flex: 1, borderBottomWidth: 0.5, borderRightWidth: 0.5, borderColor: 'black', height: 60 ,alignItems:'center'}}>
-                                        <Text style={{ textAlign: 'center', fontSize: 15, fontWeight: 'bold',color:'black' }}>125</Text>
+                                        <Text style={{ textAlign: 'center', fontFamily:'Roboto', fontSize: 16, fontWeight: 'bold',color:'black' }}>125</Text>
                                         <Text style={{ textAlign: 'center', fontSize: 11 ,opacity:0.8}}>Followers</Text>
                                     </View>
                                     <View style={{ flex: 1, borderBottomWidth: 0.5, borderRightWidth: 0.5, textAlign: 'center', borderColor: 'black', height: 60 ,alignItems:'center'}}>
-                                        <Text style={{ textAlign: 'center', fontSize: 15, fontWeight: 'bold',color:'black' }}>150</Text>
+                                        <Text style={{ textAlign: 'center', fontFamily:'Roboto', fontSize: 16, fontWeight: 'bold',color:'black' }}>150</Text>
                                         <Text style={{ textAlign: 'center', fontSize: 11,opacity:0.8 }}>Following</Text>
                                     </View>
                                     <View style={{ flex: 1, borderBottomWidth: 0.5, textAlign: 'center', borderColor: 'black', height: 60 ,alignItems:'center'}}>
-                                        <Text style={{textAlign: 'center', fontSize: 15, fontWeight: 'bold',color:'black'  }}>321</Text>
+                                        <Text style={{textAlign: 'center', fontFamily:'Roboto', fontSize: 16, fontWeight: 'bold',color:'black'  }}>321</Text>
                                         <Text style={{ textAlign: 'center', fontSize: 12,opacity:0.8 }}>Like</Text>
                                     </View>
                                 </View>
                                 <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', height: 60,alignItems:'center' }}>
                                     <View style={{ flex: 1, borderRightWidth: 0.5, borderColor: 'black', height: 60 }}>
-                                        <Text style={{ textAlign: 'center', fontSize: 15, fontWeight: 'bold',color:'black' }}>12</Text>
+                                        <Text style={{ textAlign: 'center', fontFamily:'Roboto', fontSize: 16, fontWeight: 'bold',color:'black' }}>12</Text>
                                         <Text style={{ textAlign: 'center', fontSize: 12 ,opacity:0.8}}>Photo</Text>
                                     </View>
                                     <View style={{ flex: 1, borderRightWidth: 0.5, textAlign: 'center', borderColor: 'black', height: 60 ,alignItems:'center'}}>
-                                        <Text style={{textAlign: 'center', fontSize: 15, fontWeight: 'bold',color:'black' }}>3</Text>
+                                        <Text style={{textAlign: 'center', fontFamily:'Roboto', fontSize: 16, fontWeight: 'bold',color:'black' }}>3</Text>
                                         <Text style={{ textAlign: 'center', fontSize: 12,opacity:0.8 }}>Likes</Text>
                                     </View>
                                     <View style={{ flex: 1, textAlign: 'center', borderColor: 'black', height: 60 ,alignItems:'center'}}>
-                                        <Text style={{textAlign: 'center', fontSize: 15, fontWeight: 'bold',color:'black'  }}>100</Text>
+                                        <Text style={{textAlign: 'center', fontFamily:'Roboto', fontSize: 16, fontWeight: 'bold',color:'black'  }}>100</Text>
                                         <Text style={{ textAlign: 'center', fontSize: 12,opacity:0.8 }}>Point</Text>
                                     </View>
                                 </View>

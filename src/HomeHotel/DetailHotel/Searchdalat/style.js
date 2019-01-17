@@ -20,16 +20,16 @@ const styles = StyleSheet.create({
     formSearch:{
         flexDirection: "row",
         width: widthSearch,
+        alignItems:'center',
+        justifyContent:'center',
         marginLeft: khoangCach,
         backgroundColor:"#FFF",
-        padding: 15,
         left:0,
-        width:290,
+        width:310,
         borderRadius: 5
     },
     contenttoolbar: {
         width: width,
-        marginTop:'5%',
         justifyContent: 'center',
         flexDirection: 'row',
 
@@ -48,11 +48,6 @@ const styles = StyleSheet.create({
     textbrage: {
         color: "#FF0404",
         fontSize: 9
-    },
-    hint: {
-        flex: 9,
-        color: "#9F9F9F",
-        fontSize: 12
     },
     buttonBar: {
         flex: 1,

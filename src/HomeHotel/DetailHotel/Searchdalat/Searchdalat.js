@@ -31,14 +31,14 @@ export default class Homehotel extends Component {
                         <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} colors={["#F117BE", "#8D0CBA"]}
                             style={{ width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
                             <View style={styles.contenttoolbar}>
-                                <TouchableOpacity onPress={() => { this.props.navigation.goBack(); }} style={{flex:0.5 ,justifyContent: 'center' }}>
+                                <TouchableOpacity onPress={() => {this.props.navigation.goBack()}} style={{ flex: 0.3, justifyContent: 'center',alignItems:'center',marginLeft:10 }}>
                                     <Image source={icback} />
                                 </TouchableOpacity>
-                                <View style={{ flex: 10,}}>                                
-                                        <View style={styles.formSearch}> 
-                                        <TextInput  placeholder="What do you search in Đà Lạt" style={{}}></TextInput>                                       
-                                            <Image source={icsearch} style={styles.icsearch} />
-                                        </View>                                    
+                                <View style={{ flex: 10, }}>
+                                    <View style={styles.formSearch}>
+                                        <TextInput placeholder='What do you search in Đà Lạt' style={{ opacity: 0.5, borderRadius: 5, width: 280, height: '100%' }}></TextInput>
+                                        <Image source={icsearch} style={{marginRight:15}}  onPress={()=>{}}/>
+                                    </View>
                                 </View>
                             </View>
                         </LinearGradient>
@@ -47,7 +47,7 @@ export default class Homehotel extends Component {
                         <TouchableOpacity onPress={() => { this.props.navigation.navigate('TripPlan'); }}>
                             <View style={styles.button}>
                                 <Image source={icTripplane} style={styles.imageButton} />
-                                <Text style={styles.textbuton}>Trip plans</Text>
+                                <Text style={styles.textbuton} >Trip plans</Text>
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() => { this.props.navigation.navigate('Homehotel'); }}>

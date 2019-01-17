@@ -44,7 +44,7 @@ export default class Homehotel extends Component {
                                 <TouchableOpacity style={{ marginRight: 10 }} >
                                     <Image source={icsort}></Image>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={{ marginRight: 10 }} >
+                                <TouchableOpacity style={{ marginRight: 10 }} onPress={()=>{this.props.navigation.navigate('Findalat');}} >
                                     <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>Fillter</Text>
                                 </TouchableOpacity>
                             </View>

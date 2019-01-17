@@ -8,7 +8,7 @@ const widthSearch = width - khoangCach * 2;
 const styles = StyleSheet.create({
     toolbar: {
         width: width,
-        height: '9%',
+        height: 80,
         justifyContent: 'center',
         flexDirection: 'row',
     },

@@ -11,6 +11,7 @@ import {
     FlatList,
 } from 'react-native';
 import styles from './style';
+import LinearGradient from 'react-native-linear-gradient'
 import icback from '../../../../resource/image/ic_back.png'
 export default class Homehotel extends Component {
     render() {
@@ -26,7 +27,10 @@ export default class Homehotel extends Component {
                                     <Image source={icback} />
                                 </TouchableOpacity>
                                 <View style={{ flex: 5, alignItems: 'flex-start', justifyContent: 'center' }}>
-                                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'white' }}>Top khách sạn</Text>
+                                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'white' }}>Fillter</Text>
+                                </View>
+                                <View style={{ flex: 1, alignItems: 'flex-start', justifyContent: 'center' }}>
+                                    <Text style={{ fontSize: 16, fontWeight: 'bold', color: 'white' }}>Save</Text>
                                 </View>
                             </View>
                         </LinearGradient>

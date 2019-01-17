@@ -47,7 +47,7 @@ export default class DetailHotel extends Component {
               <Image source={icmap} />
             </TouchableOpacity>
           </View>
-          <TouchableHighlight onPress={() => { this.props.navigation.navigate('Search'); }}
+          <TouchableHighlight onPress={() => { this.props.navigation.navigate('Findalat'); }}
             underlayColor="transparent">
             <View style={styles.formSearch}>
               <Text style={styles.hint}>What do you search in Đà Lạt</Text>

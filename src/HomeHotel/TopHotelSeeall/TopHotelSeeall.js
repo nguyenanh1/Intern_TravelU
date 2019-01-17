@@ -55,6 +55,7 @@ export default class Homehotel extends Component {
                                         <ViewtopHotelSeeall
                                             item={item}
                                             index={index}
+                                            onPress={()=>{this.props.navigation.navigate('DetailHotel')}}
                                         />
                                     );
                                 }}

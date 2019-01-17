@@ -92,10 +92,16 @@ export default class CreateMyTripPlane extends Component {
         date: new Date (),
       });
       if (action !== DatePickerAndroid.dismissedAction) {
-        this.setState ({
-          dateTo: new Date (year, month, day),
-          dateToText: this.getDate (day, month + 1, year),
-        });
+        dateTo = new Date(year,month,day);
+        dateFrom = this.state.dateForm;
+        if((dateTo.getTime()-dateFrom.getTime())>=0){
+          this.setState ({
+            dateTo: new Date (year, month, day),
+            dateToText: this.getDate (day, month + 1, year),
+          });
+        }else{
+          ToastAndroid.show("Ngày về phải lớn hơn ngày chọn",ToastAndroid.SHORT);
+        }
       }
     } catch ({code, message}) {
       console.warn ('Cannot open date picker', message);
@@ -108,22 +114,22 @@ export default class CreateMyTripPlane extends Component {
     });
   }
   nextStep () {
-    let from = this.state.from;
-    let to = this.state.to;
-    let dateFrom = this.state.dateForm;
-    let dateTo = this.state.dateTo;
-    var timeDiff;
-    var diffDays;
-    if (dateFrom != null && dateTo != null) {
-      timeDiff = Math.abs (dateTo.getTime () - dateFrom.getTime ());
-      diffDays = Math.ceil (timeDiff / (1000 * 3600 * 24));
-    }
-    if (from == '' || to == '' || diffDays == null) {
-      ToastAndroid.show ('Chưa chọn xong', ToastAndroid.SHORT);
-    } else {
-      this.props.navigation.navigate ('AddPlace');
-    }
-    // this.props.navigation.navigate ('AddPlace');
+    // let from = this.state.from;
+    // let to = this.state.to;
+    // let dateFrom = this.state.dateForm;
+    // let dateTo = this.state.dateTo;
+    // var timeDiff;
+    // var diffDays;
+    // if (dateFrom != null && dateTo != null) {
+    //   timeDiff = Math.abs (dateTo.getTime () - dateFrom.getTime ());
+    //   diffDays = Math.ceil (timeDiff / (1000 * 3600 * 24));
+    // }
+    // if (from == '' || to == '' || diffDays == null) {
+    //   ToastAndroid.show ('Chưa chọn xong', ToastAndroid.SHORT);
+    // } else {
+    //   this.props.navigation.navigate ('AddPlace');
+    // }
+    this.props.navigation.navigate ('AddPlace');
   }
   render () {
     return (

@@ -16,7 +16,7 @@ import Viewplace from './ViewPlace';
 
 export default class Homehotel extends Component {
 
-    
+
     render() {
         return (
             <ScrollView>
@@ -24,7 +24,7 @@ export default class Homehotel extends Component {
                     <ImageBackground source={bghome} style={styles.bgTop}>
                         <StatusBar backgroundColor="transparent" translucent={true} />
                         <View style={styles.toolbar}>
-                            <TouchableOpacity onPress={() => {this.props.navigation.goBack(); }}>
+                            <TouchableOpacity onPress={() => { this.props.navigation.goBack(); }}>
                                 <Image source={icback} />
                             </TouchableOpacity>
                             <View style={{ flex: 5, alignItems: 'center' }}><Image source={icTravelu} /></View>
@@ -36,7 +36,8 @@ export default class Homehotel extends Component {
                         <View style={{ flex: 2, flexDirection: 'row', alignItems: 'center', borderWidth: 0.2, borderRadius: 10, margin: 5, width: '90%' }}>
                             <Image source={icplace} style={{ marginLeft: '2%' }}></Image>
                             <TextInput placeholder='where do you want to go ?' style={{ opacity: 0.5 }} onChangeText={() => { }}></TextInput>
-                        </View><TouchableOpacity onPress={() => { }}
+                        </View>
+                        <TouchableOpacity onPress={() => { }}
                             style={{ flex: 2, alignItems: 'center', borderWidth: 0.2, borderRadius: 10, margin: 5, width: '90%', alignItems: 'center', justifyContent: 'center', }} >
                             <LinearGradient start={{ x: 1, y: 0 }} end={{ x: 0, y: 0 }} colors={["#F117BE", "#8D0CBA"]}
                                 style={{ width: '100%', height: '100%', alignItems: 'center', borderRadius: 10, justifyContent: 'center' }}                        >
@@ -49,7 +50,7 @@ export default class Homehotel extends Component {
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Top khách sạn</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} onPress={()=>{this.props.navigation.navigate('TopHotelSeeall')}} >
+                        <TouchableOpacity style={{ marginRight: 10 }} onPress={() => { this.props.navigation.navigate('TopHotelSeeall') }} >
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>
@@ -71,7 +72,7 @@ export default class Homehotel extends Component {
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Top khách sạn lãng mạn</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }} onPress={()=>{this.props.navigation.navigate('TopHotelSeeall')}} >
+                        <TouchableOpacity style={{ marginRight: 10 }} onPress={() => { this.props.navigation.navigate('TopHotelSeeall') }} >
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>
@@ -115,7 +116,7 @@ export default class Homehotel extends Component {
                 <View style={{ marginTop: 10, marginLeft: 5 }}>
                     <View style={{ flex: 1, flexDirection: 'row' }}>
                         <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 5 }}>Địa điểm phổ biến</Text>
-                        <TouchableOpacity style={{ marginRight: 10 }}  onPress={()=>{this.props.navigation.navigate('TopDiadiem')}}>
+                        <TouchableOpacity style={{ marginRight: 10 }} onPress={() => { this.props.navigation.navigate('TopDiadiem') }}>
                             <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>see all</Text>
                         </TouchableOpacity>
                     </View>

@@ -19,6 +19,7 @@ import icHotel from '../../../../resource/image/ic_hotel.png';
 import icback from '../../../../resource/image/ic_back.png';
 import icRestaurent from '../../../../resource/image/ic_restaurent.png';
 import icsearch from '../../../../resource/image/ic_search.png';
+import { TextInput } from 'react-native-gesture-handler';
 
 export default class Homehotel extends Component {
     render() {
@@ -33,14 +34,11 @@ export default class Homehotel extends Component {
                                 <TouchableOpacity onPress={() => { this.props.navigation.goBack(); }} style={{flex:0.5 ,justifyContent: 'center' }}>
                                     <Image source={icback} />
                                 </TouchableOpacity>
-                                <View style={{ flex: 10,}}>
-                                    <TouchableHighlight onPress={() => { this.props.navigation.navigate('Searchdalat'); }}
-                                        underlayColor="transparent">
-                                        <View style={styles.formSearch}>
-                                            <Text style={styles.hint}>What do you search in Đà Lạt</Text>
+                                <View style={{ flex: 10,}}>                                
+                                        <View style={styles.formSearch}> 
+                                        <TextInput  placeholder="What do you search in Đà Lạt" style={{}}></TextInput>                                       
                                             <Image source={icsearch} style={styles.icsearch} />
-                                        </View>
-                                    </TouchableHighlight>
+                                        </View>                                    
                                 </View>
                             </View>
                         </LinearGradient>

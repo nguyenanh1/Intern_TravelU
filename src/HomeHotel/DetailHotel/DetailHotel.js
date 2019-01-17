@@ -47,7 +47,7 @@ export default class DetailHotel extends Component {
               <Image source={icmap} />
             </TouchableOpacity>
           </View>
-          <TouchableHighlight onPress={() => { this.props.navigation.navigate('Findalat'); }}
+          <TouchableHighlight onPress={() => { this.props.navigation.navigate('Searchdalat'); }}
             underlayColor="transparent">
             <View style={styles.formSearch}>
               <Text style={styles.hint}>What do you search in Đà Lạt</Text>
@@ -109,7 +109,7 @@ export default class DetailHotel extends Component {
         </View>
         <View style={{ marginTop: 8, }}>
           <View style={{ flex: 1, flexDirection: 'row', }}>
-            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, opacity: 0.5 }}>Top vui chơi giải trí</Text>
+            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, }}>Top vui chơi giải trí</Text>
             <TouchableOpacity style={{ marginRight: 10 }} >
               <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>See all</Text>
             </TouchableOpacity>
@@ -131,7 +131,7 @@ export default class DetailHotel extends Component {
         </View>
         <View style={{ marginTop: 8, }}>
           <View style={{ flex: 1, flexDirection: 'row', }}>
-            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, opacity: 0.5 }}>Top Khách sạn</Text>
+            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, }}>Top Khách sạn</Text>
             <TouchableOpacity style={{ marginRight: 10 }} >
               <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>See all</Text>
             </TouchableOpacity>
@@ -153,7 +153,73 @@ export default class DetailHotel extends Component {
         </View>
         <View style={{ marginTop: 8, }}>
           <View style={{ flex: 1, flexDirection: 'row', }}>
-            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, opacity: 0.5 }}>Top ăn uống</Text>
+            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14,}}>Top ăn uống</Text>
+            <TouchableOpacity style={{ marginRight: 10 }} >
+              <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>See all</Text>
+            </TouchableOpacity>
+          </View>
+          <FlatList
+            data={Datakhuvuichoi}
+            renderItem={({ item, index }) => {
+              return (
+                <Viewkhuvuichoi
+                  item={item}
+                  index={index}
+                  parentFlatList={this}
+                />
+              );
+            }}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+          />
+        </View>
+        <View style={{ marginTop: 8, }}>
+          <View style={{ flex: 1, flexDirection: 'row', }}>
+            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, }}>Địa điểm vui chơi giir trí địa phương</Text>
+            <TouchableOpacity style={{ marginRight: 10 }} >
+              <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>See all</Text>
+            </TouchableOpacity>
+          </View>
+          <FlatList
+            data={Datakhuvuichoi}
+            renderItem={({ item, index }) => {
+              return (
+                <Viewkhuvuichoi
+                  item={item}
+                  index={index}
+                  parentFlatList={this}
+                />
+              );
+            }}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+          />
+        </View>
+        <View style={{ marginTop: 8, }}>
+          <View style={{ flex: 1, flexDirection: 'row', }}>
+            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, }}>Địa điểm dành cho gia đình</Text>
+            <TouchableOpacity style={{ marginRight: 10 }} >
+              <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>See all</Text>
+            </TouchableOpacity>
+          </View>
+          <FlatList
+            data={Datakhuvuichoi}
+            renderItem={({ item, index }) => {
+              return (
+                <Viewkhuvuichoi
+                  item={item}
+                  index={index}
+                  parentFlatList={this}
+                />
+              );
+            }}
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+          />
+        </View>
+        <View style={{ marginTop: 8, }}>
+          <View style={{ flex: 1, flexDirection: 'row', }}>
+            <Text style={{ flex: 7, fontSize: 15, color: 'black', marginLeft: 14, }}>Địa điểm mới lạ</Text>
             <TouchableOpacity style={{ marginRight: 10 }} >
               <Text style={{ flex: 1, color: '#ED50C6', fontSize: 12 }}>See all</Text>
             </TouchableOpacity>

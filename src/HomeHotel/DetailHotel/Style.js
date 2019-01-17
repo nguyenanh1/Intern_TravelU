@@ -8,7 +8,7 @@ const widthSearch = width-khoangCach*2;
 const styles = StyleSheet.create({
     bgTop:{
         width: width,
-        height: 300
+        height: 280
     },
     toolbar:{
         marginTop: 40,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     buttonBar:{
         flex: 1,
         width:width,
-        marginTop: 10,
+        marginTop: 15,
         flexDirection:"row",
         justifyContent:'center',
         alignItems: 'center',

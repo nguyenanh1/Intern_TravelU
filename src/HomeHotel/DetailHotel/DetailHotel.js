@@ -10,7 +10,9 @@ import {
   StatusBar,
   FlatList,
 } from 'react-native';
-import bgtop from '../../../resource/image/addbudget.png'
+import bgtop from '../../../resource/image/addbudget.png';
+import bgtop2 from '../../../resource/image/chobe.png';
+import bgtop3 from '../../../resource/image/place.png';
 import icSearch from '../../../resource/image/ic_search.png';
 import icTripplane from '../../../resource/image/ic_tripplane.png';
 import icAirplane from '../../../resource/image/ic_airplane.png';
@@ -23,11 +25,16 @@ import ic_createtrip from '../../../resource/image/ic_createtrip.png'
 import styles from './Style';
 import Viewkhuvuichoi from './Viewkhuvuichoi';
 import Datakhuvuichoi from './Datakhuvuichoi';
+const imglist=[
+  {id :1,uri:bgtop},
+  {id :2,uri:bgtop2},
+  {id :3,uri:bgtop3},
+]
 export default class DetailHotel extends Component {
   render() {
     return (
       <ScrollView>
-        <ImageBackground source={bgtop} style={styles.bgTop}>
+        <ImageBackground source={imglist[2].uri} style={styles.bgTop}>
           <StatusBar backgroundColor="transparent" translucent={true} />
           <View style={{ width: '100%', height: 100, flexDirection: 'row' }}>
             <TouchableOpacity onPress={() => { this.props.navigation.goBack(); }} style={{ justifyContent: 'center' }}>
@@ -88,7 +95,7 @@ export default class DetailHotel extends Component {
             </TouchableOpacity>
           </View>
         </ImageBackground>
-
+        
         <View style={{ alignItems: 'center', margin: 10, marginTop: 27, elevation: 0.5, height: 200, borderRadius: 5 }}>
           <Text style={{ color: '#990099', fontSize: 20, fontWeight: 'bold' }}>Giới Thiệu</Text>
           <View style={{ borderWidth: 1, borderColor: 'blue', margin: 10, height: 145 }}>
@@ -166,6 +173,7 @@ export default class DetailHotel extends Component {
             horizontal={true}
           />
         </View>
+
       </ScrollView>
     );
   }

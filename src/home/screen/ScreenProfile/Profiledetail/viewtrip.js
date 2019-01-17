@@ -37,14 +37,14 @@ export default class ViewItemSearch extends Component {
                                 <Text style={{ color: 'black', textAlign: 'center' }}>Delete</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={{ flex: 1,ackgroundColor: 'black',width:'100%',height:50}}></View>
-                        <View style={{backgroundColor: 'black',width:'100%',height:50,marginLeft:"6%",opacity:0.6,position:'absolute',marginTop:'35%'}}></View>
-                        <View style={{marginLeft: '5%', justifyContent: 'flex-end' }}>
+                        <View style={{ flex: 1, width: '100%', height: 50 }}></View>
+                        <View style={{ backgroundColor: 'black', width: '100%', height: 50, marginLeft: "6%", opacity: 0.6, position: 'absolute', bottom: 0, }}></View>
+                        <View style={{ marginLeft: '5%', justifyContent: 'flex-end' }}>
                             <View style={{ flexDirection: "row" }}>
                                 <View style={{ flex: 1, alignItems: 'center' }}>
                                     <Image source={this.props.item.ma}></Image>
                                 </View>
-                                <View style={{ flex: 10}}>
+                                <View style={{ flex: 10 }}>
                                     <Text style={{ color: 'white', fontWeight: 'bold', opacity: 2 }}>{this.props.item.name}</Text>
                                     <Text style={{ color: 'white', opacity: 2 }}>{this.props.item.diachi}</Text>
                                 </View>

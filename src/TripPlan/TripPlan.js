@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
-import {
-    View,
-    StatusBar,
-    TouchableHighlight,
-    Text,
-    Image
-} from 'react-native';                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+import {View, StatusBar, TouchableHighlight, Text, Image} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import styles from './style'
+import styles from './style';
 
 export default class TripPLan extends Component {
   render () {
@@ -29,7 +23,7 @@ export default class TripPLan extends Component {
             >
               <Image source={require ('../../resource/image/ic_back.png')} />
             </TouchableHighlight>
-            <Text style={[styles.title, {flex: 8}]}>Create trip plan</Text>
+            <Text style={[styles.title, {flex: 8}]}>Trip plan</Text>
             <TouchableHighlight style={{flex: 1}}>
               <Image
                 source={require ('../../resource/image/ic_search_write.png')}

@@ -58,7 +58,7 @@ export default class AddBudget extends Component {
             <FlatList 
                 data={databudget}
                 renderItem={({item,index})=>{
-                    return <ViewItemBudget item={item} index={index}/>
+                    return <ViewItemBudget item={item} index={index} onPress={()=>{this.props.navigation.navigate("PlanDetail")}}/>
                 }}
                 showsVerticalScrollIndicator={false}
                 style={{padding: 16}}

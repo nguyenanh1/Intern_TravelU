@@ -49,45 +49,8 @@ const AppContainer = createAppContainer (HomeTab);
 export default class PLanDetail extends Component {
   constructor (props) {
     super (props);
-    this.onEventPress = this.onEventPress.bind (this);
-    this.renderSelected = this.renderSelected.bind (this);
-    this.renderDetail = this.renderDetail.bind (this);
   }
-  onEventPress (data) {
-    this.setState ({selected: data});
-  }
-  renderSelected () {
-    if (this.state.selected)
-      return (
-        <Text style={{marginTop: 10}}>
-          Selected event:
-          {' '}
-          {this.state.selected.title}
-          {' '}
-          at
-          {' '}
-          {this.state.selected.time}
-        </Text>
-      );
-  }
-  renderDetail (rowData, sectionID, rowID) {
-    let title = <Text style={[styles.title]}>{rowData.title}</Text>;
-    var desc = null;
-    if (rowData.description && rowData.imageUrl)
-      desc = (
-        <View style={styles.descriptionContainer}>
-          <Image source={{uri: rowData.imageUrl}} style={styles.image} />
-          <Text style={[styles.textDescription]}>{rowData.description}</Text>
-        </View>
-      );
-
-    return (
-      <View style={{flex: 1}}>
-        {title}
-        {desc}
-      </View>
-    );
-  }
+  
   render () {
     return (
       <View style={styles.container}>

@@ -75,10 +75,30 @@ export default class CreateMyTripPlane extends Component {
         date: new Date (),
       });
       if (action !== DatePickerAndroid.dismissedAction) {
-        this.setState ({
-          dateForm: new Date (year, month, day),
-          dateFormText: this.getDate (day, month + 1, year),
-        });
+        now = new Date();
+        datePick = new Date(year, month, day);
+        if((datePick.getTime()-now.getTime())<0){
+          ToastAndroid.show("Ngày đi không nhở hơn ngày hôm nay",ToastAndroid.SHORT);
+        }else{
+          if(this.state.dateTo==null){
+            this.setState ({
+              dateForm: new Date (year, month, day),
+              dateFormText: this.getDate (day, month + 1, year),
+            });
+          }else{
+            let dateTo = this.state.dateTo;
+            if((dateTo.getTime()-datePick.getTime())<0){
+              ToastAndroid.show("Ngày đi không lơn hơn ngày chọn",ToastAndroid.SHORT);
+            }else{
+              this.setState ({
+                dateForm: new Date (year, month, day),
+                dateFormText: this.getDate (day, month + 1, year),
+              });
+            }
+          }
+        
+        }
+        
       }
     } catch ({code, message}) {
       console.warn ('Cannot open date picker', message);
@@ -92,15 +112,23 @@ export default class CreateMyTripPlane extends Component {
         date: new Date (),
       });
       if (action !== DatePickerAndroid.dismissedAction) {
-        dateTo = new Date(year,month,day);
-        dateFrom = this.state.dateForm;
-        if((dateTo.getTime()-dateFrom.getTime())>=0){
+        if(this.state.dateForm == null){
           this.setState ({
             dateTo: new Date (year, month, day),
             dateToText: this.getDate (day, month + 1, year),
           });
         }else{
-          ToastAndroid.show("Ngày về phải lớn hơn ngày chọn",ToastAndroid.SHORT);
+          dateTo = new Date(year,month,day);
+          dateFrom = this.state.dateForm;
+  
+          if((dateTo.getTime()-dateFrom.getTime())>=0){
+            this.setState ({
+              dateTo: new Date (year, month, day),
+              dateToText: this.getDate (day, month + 1, year),
+            });
+          }else{
+            ToastAndroid.show("Ngày về phải lớn hơn ngày chọn",ToastAndroid.SHORT);
+          }
         }
       }
     } catch ({code, message}) {

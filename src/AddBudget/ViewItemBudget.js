@@ -11,7 +11,7 @@ const widthFull = Dimensions.get ('window').width;
 export default class ViewItemBudget extends Component {
   render () {
     return (
-      <TouchableHighlight onPress={this.props.onPress}  >
+      <TouchableHighlight underlayColor="transparent" onPress={this.props.onPress}  >
         <View
           style={{
             width: widthFull,

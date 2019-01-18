@@ -15,6 +15,7 @@ const data=[
     },
     {
         key: "2",
+        type: "car",
         icon: ic_plan_car,
         des: "16.5km || 26 mins"
     },
@@ -30,6 +31,7 @@ const data=[
         numrate: 190
     },{
         key: "4",
+        type: "car",
         icon: ic_plan_car,
         des: "16.5km || 26 mins"
     },

@@ -15,7 +15,7 @@ export default class ViewItemSearch extends Component {
                         </Image>
                     </View>
                     <View style={{ flex: 3, justifyContent: 'center', alignItems: 'flex-start' }}>
-                        <Text style={{ color: 'black', fontSize: 20, textAlign: 'left' }}>{this.props.item.key}</Text>
+                        <Text style={{ color: 'black',fontFamily:'Roboto', fontSize: 16, textAlign: 'left' }}>{this.props.item.key}</Text>
                     </View>
                     <View style={{ flex: 2, justifyContent: 'center', alignItems: 'flex-end' }}>
                         <Text style={{ color: 'gray', fontSize: 12, marginRight: '15%' }}>{this.props.item.date}</Text>

@@ -25,6 +25,7 @@ import TopDiadiem from '../HomeHotel/DiadiemSeeall/TopDiadiem';
 import DetailHotel from '../HomeHotel/DetailHotel/DetailHotel'
 import PlanDetail from '../PlanDetail/PlanDetail';
 import Findalat from '../HomeHotel/DetailHotel/Finđalat/Findalat'
+import Searchdalat from '../HomeHotel/DetailHotel/Searchdalat/Searchdalat';
 const HomeStack = createStackNavigator (
   {
     Home: {
@@ -47,6 +48,8 @@ const HomeStack = createStackNavigator (
       screen:DetailHotel
     },Findalat:{
       screen:Findalat
+    },Searchdalat:{
+      screen:Searchdalat
     }
     
   },

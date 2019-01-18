@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Rating } from 'react-native-elements';
+import saocam from '../../resource/image/startrang.png';
 export default class ViewItemAdreess extends Component {
+  changeMoney(props) {
+    let money = (props.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')).toString();
+    money = money.substring(0, money.length - 3) + 'đ';
+    return money;
+  }
+
   render() {
     return (
       <TouchableOpacity style={{ width: 150 }} >
@@ -19,7 +26,7 @@ export default class ViewItemAdreess extends Component {
           </View>
           <View style={{ flexDirection: "row", width: 140, marginLeft: 10 }}>
             <Text style={{ flex: 1, opacity: 0.5, fontSize: 10 }}>{this.props.item.loaithue}</Text>
-            <Text style={{ flex: 1, opacity: 0.5, color: '#FF6600', fontSize: 12, fontWeight: 'bold', alignItems: 'flex-end' }}>{this.props.item.price} đ</Text>
+            <Text style={{ flex: 1.2, opacity: 0.5, color: '#FF6600', fontSize: 12, fontWeight: 'bold', alignItems: 'flex-end' }}>{this.changeMoney(this.props.item.price)} </Text>
           </View>
         </View>
       </TouchableOpacity>

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { Rating } from 'react-native-elements';
+import starcam from '../../../resource/image/startrang.png'
 
 export default class ViewtopHotelSeeall extends Component {
+    changeMoney(props) {
+        let money = (props.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')).toString();
+        money = money.substring(0, money.length - 3) + 'đ';
+        return money; ``````
+      }
     render() {
         return (
             <TouchableOpacity style={{ width: '100%', height: 140, marginTop: '2%', justifyContent: 'center', backgroundColor: 'white', }}
@@ -26,7 +32,7 @@ export default class ViewtopHotelSeeall extends Component {
                         <Text style={{ opacity: 0.5, fontSize: 12 ,marginTop:'2%'}}> Hotel Star 5 </Text>
                         <View style={{ flexDirection: 'row',flex:1 ,marginTop:'2%'}}>
                             <Text style={{ opacity: 0.5, fontSize: 12 }}>{this.props.item.loaithue}</Text>
-                            <Text style={{ opacity: 0.5, color: '#FF6600', fontSize: 12, fontWeight: 'bold', }}>{this.props.item.price} đ</Text>
+                            <Text style={{ opacity: 0.5, color: '#FF6600', fontSize: 12, fontWeight: 'bold', }}>{this.changeMoney(this.props.item.price)}</Text>
                         </View>
                     </View>
                     <View style={{ alignItems: 'center',flex:0.5,marginTop:'2%'}}>

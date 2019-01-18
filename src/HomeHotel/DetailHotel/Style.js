@@ -8,7 +8,9 @@ const widthSearch = width-khoangCach*2;
 const styles = StyleSheet.create({
     bgTop:{
         width: width,
-        height: 280
+        height: 320,
+        position:'absolute',
+        top:0
     },
     toolbar:{
         marginTop: 40,
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
         fontSize: 9
     },
     formSearch:{
-        marginTop: '15%',
+        marginTop: 80,
         flexDirection: "row",
         width: widthSearch,
         marginLeft: khoangCach,

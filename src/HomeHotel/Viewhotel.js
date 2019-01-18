@@ -6,7 +6,7 @@ export default class ViewItemAdreess extends Component {
   changeMoney(props) {
     let money = (props.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')).toString();
     money = money.substring(0, money.length - 3) + 'đ';
-    return money; ``````
+    return money;
   }
 
   render() {

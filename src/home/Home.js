@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Image, StyleSheet, Text } from 'react-native';
+import {View, Image, StyleSheet, Text, TouchableHighlight} from 'react-native';
 
 import {
   createStackNavigator,
@@ -9,7 +9,7 @@ import {
 import ScreenHome from './screen/ScreenHome/ScreenHome';
 import ScreenTab2 from './screen/ScreenTab2/ScreenTab2';
 import ScreenTab3 from './screen/ScreenTab3/ScreenTab3';
-import CreateMyTrip from '../CreateMyTripPlane/CreateMyTrip'
+import CreateMyTrip from '../CreateMyTripPlane/CreateMyTrip';
 import ScreenProfile from './screen/ScreenProfile/ScreenProfile';
 import Profiledetail from './screen/ScreenProfile/Profiledetail/Profiledetail';
 import Search from '../Search/Search';
@@ -22,81 +22,102 @@ import AddBudget from '../AddBudget/AddBudget';
 import FinishCreate from '../FinishCreate/FinishCreate';
 import TripPlan from '../TripPlan/TripPlan';
 import TopDiadiem from '../HomeHotel/DiadiemSeeall/TopDiadiem';
-import DetailHotel from '../HomeHotel/DetailHotel/DetailHotel'
+import DetailHotel from '../HomeHotel/DetailHotel/DetailHotel';
 import PlanDetail from '../PlanDetail/PlanDetail';
-import Findalat from '../HomeHotel/DetailHotel/Finđalat/Findalat'
+import Findalat from '../HomeHotel/DetailHotel/Finđalat/Findalat';
 import Searchdalat from '../HomeHotel/DetailHotel/Searchdalat/Searchdalat';
 const HomeStack = createStackNavigator (
   {
     Home: {
       screen: ScreenHome,
-    },Search:{
-       screen: Search,
-    },Homehotel:{
+    },
+    Search: {
+      screen: Search,
+    },
+    Homehotel: {
       screen: Homehotel,
-    },HomeRestaurant:{
-      screen:HomeRestaurant
-    },HomeTours:{
-      screen:HomeTours
-    },TopHotelSeeall:{
-      screen:TopHotelSeeall
-    },TripPlan:{
-      screen:TripPlan
-    },TopDiadiem:{
-      screen:TopDiadiem
-    },DetailHotel:{
-      screen:DetailHotel
-    },Findalat:{
-      screen:Findalat
-    },Searchdalat:{
-      screen:Searchdalat
-    }
-    
+    },
+    HomeRestaurant: {
+      screen: HomeRestaurant,
+    },
+    HomeTours: {
+      screen: HomeTours,
+    },
+    TopHotelSeeall: {
+      screen: TopHotelSeeall,
+    },
+    TripPlan: {
+      screen: TripPlan,
+    },
+    TopDiadiem: {
+      screen: TopDiadiem,
+    },
+    DetailHotel: {
+      screen: DetailHotel,
+    },
+    Findalat: {
+      screen: Findalat,
+    },
+    Searchdalat: {
+      screen: Searchdalat,
+    },
   },
   {
     headerMode: 'none',
   }
 );
 
-HomeStack.navigationOptions=({navigation}) => {
+HomeStack.navigationOptions = ({navigation}) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
-      tabBarVisible = false;
+    tabBarVisible = false;
   }
   return {
-      tabBarVisible,
+    tabBarVisible,
   };
-}
+};
 
 const Profile = createStackNavigator (
   {
     Home: {
       screen: ScreenProfile,
-    },Profiledetail:{
-       screen: Profiledetail,
-    },Profile:{
-      screen:ScreenProfile
-    }
+    },
+    Profiledetail: {
+      screen: Profiledetail,
+    },
+    Profile: {
+      screen: ScreenProfile,
+    },
   },
   {
     headerMode: 'none',
   }
 );
-Profile.navigationOptions=({navigation}) => {
+Profile.navigationOptions = ({navigation}) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
-      tabBarVisible = false;
+    tabBarVisible = false;
   }
   return {
-      tabBarVisible,
+    tabBarVisible,
   };
-}
-class ButtonTrip extends Component{
-  render(){
-    return(
-      <View style={{position:"absolute",top: -25, flexDirection:"column",justifyContent:"center",alignItems:"center"}}>
-        <Image source={require("../../resource/image/ic_createtrip.png")}/>
-        <Text style={{color:"#F36BDD", fontSize: 11}}>Create trip plane</Text>
+};
+class ButtonTrip extends Component {
+  render () {
+    return (
+      <View
+        style={{
+          position: 'absolute',
+          top: -25,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Image source={require ('../../resource/image/ic_createtrip.png')} />
+        <Text style={{color: '#F36BDD', fontSize: 11}}>
+          Create trip plane
+        </Text>
       </View>
     );
   }
@@ -105,30 +126,34 @@ class ButtonTrip extends Component{
 const CreatTripStack = createStackNavigator (
   {
     CreateTrip: {
-      screen: CreateMyTrip
-    },AddPlace:{
-       screen: AddPlace
-    },AddBudGet:{
-      screen: AddBudget
-    },FinishCreate:{
-      screen: FinishCreate
-    },PlanDetail:{
-      screen:PlanDetail
-    }
+      screen: CreateMyTrip,
+    },
+    AddPlace: {
+      screen: AddPlace,
+    },
+    AddBudGet: {
+      screen: AddBudget,
+    },
+    FinishCreate: {
+      screen: FinishCreate,
+    },
+    PlanDetail: {
+      screen: PlanDetail,
+    },
   },
   {
     headerMode: 'none',
   }
 );
-CreatTripStack.navigationOptions=({navigation}) => {
+CreatTripStack.navigationOptions = ({navigation}) => {
   let tabBarVisible = true;
   if (navigation.state.index > 0) {
-      tabBarVisible = false;
+    tabBarVisible = false;
   }
   return {
-      tabBarVisible,
+    tabBarVisible,
   };
-}
+};
 
 const TabNavigator = createBottomTabNavigator (
   {
@@ -160,7 +185,7 @@ const TabNavigator = createBottomTabNavigator (
             : <Image
                 source={require ('../../resource/image/ic_file_disable.png')}
                 style={styles.tabIcon}
-              />, 
+              />,
       }),
     },
     CreateTrip: {
@@ -168,7 +193,7 @@ const TabNavigator = createBottomTabNavigator (
       navigationOptions: () => ({
         tabBarIcon: <ButtonTrip />,
         tabBarVisible: false,
-      }), 
+      }),
     },
     Tab3: {
       screen: ScreenTab3,
@@ -204,7 +229,7 @@ const TabNavigator = createBottomTabNavigator (
   {
     initialRouteName: 'Home',
     tabBarOptions: {
-      showLabel:false
+      showLabel: false,
     },
   }
 );

@@ -28,7 +28,10 @@ export default class Search extends Component {
   render () {
     return (
       <ScrollView>
-        <ImageBackground source={bgHome} style={styles.bgTop}>
+        <ImageBackground
+          source={require ('../../../../resource/image/bghome.png')}
+          style={styles.bgTop}
+        >
           <StatusBar backgroundColor="transparent" translucent={true} />
           <View style={styles.toolbar}>
             <Image source={icTravelu} />

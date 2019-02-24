@@ -75,30 +75,34 @@ export default class CreateMyTripPlane extends Component {
         date: new Date (),
       });
       if (action !== DatePickerAndroid.dismissedAction) {
-        now = new Date();
-        datePick = new Date(year, month, day);
-        if((datePick.getTime()-now.getTime())<0){
-          ToastAndroid.show("Ngày đi không nhở hơn ngày hôm nay",ToastAndroid.SHORT);
-        }else{
-          if(this.state.dateTo==null){
+        now = new Date ();
+        datePick = new Date (year, month, day);
+        if (datePick.getTime () - now.getTime () < 0) {
+          ToastAndroid.show (
+            'Ngày đi không nhở hơn ngày hôm nay',
+            ToastAndroid.SHORT
+          );
+        } else {
+          if (this.state.dateTo == null) {
             this.setState ({
               dateForm: new Date (year, month, day),
               dateFormText: this.getDate (day, month + 1, year),
             });
-          }else{
+          } else {
             let dateTo = this.state.dateTo;
-            if((dateTo.getTime()-datePick.getTime())<0){
-              ToastAndroid.show("Ngày đi không lơn hơn ngày chọn",ToastAndroid.SHORT);
-            }else{
+            if (dateTo.getTime () - datePick.getTime () < 0) {
+              ToastAndroid.show (
+                'Ngày đi không lơn hơn ngày chọn',
+                ToastAndroid.SHORT
+              );
+            } else {
               this.setState ({
                 dateForm: new Date (year, month, day),
                 dateFormText: this.getDate (day, month + 1, year),
               });
             }
           }
-        
         }
-        
       }
     } catch ({code, message}) {
       console.warn ('Cannot open date picker', message);
@@ -112,22 +116,25 @@ export default class CreateMyTripPlane extends Component {
         date: new Date (),
       });
       if (action !== DatePickerAndroid.dismissedAction) {
-        if(this.state.dateForm == null){
+        if (this.state.dateForm == null) {
           this.setState ({
             dateTo: new Date (year, month, day),
             dateToText: this.getDate (day, month + 1, year),
           });
-        }else{
-          dateTo = new Date(year,month,day);
+        } else {
+          dateTo = new Date (year, month, day);
           dateFrom = this.state.dateForm;
-  
-          if((dateTo.getTime()-dateFrom.getTime())>=0){
+
+          if (dateTo.getTime () - dateFrom.getTime () >= 0) {
             this.setState ({
               dateTo: new Date (year, month, day),
               dateToText: this.getDate (day, month + 1, year),
             });
-          }else{
-            ToastAndroid.show("Ngày về phải lớn hơn ngày chọn",ToastAndroid.SHORT);
+          } else {
+            ToastAndroid.show (
+              'Ngày về phải lớn hơn ngày chọn',
+              ToastAndroid.SHORT
+            );
           }
         }
       }
@@ -173,7 +180,7 @@ export default class CreateMyTripPlane extends Component {
               underlayColor="transparent"
               style={styles.icback}
               onPress={() => {
-                this.props.navigation.goBack ();
+                this.props.navigation.goBack(null);
               }}
             >
               <Image source={require ('../../resource/image/ic_back.png')} />
